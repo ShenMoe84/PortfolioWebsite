@@ -1,16 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from '../navbar/NavBar';
 import styles from './App.module.css';
 
-const App = () => {
+const App = () => (
   <div>
     <BrowserRouter>
-      <Route
-        Component={NavBar}
-      />
+      <Routes>
+        <Route
+          exact path='/graduatework'
+          Component={NavBar}
+        />
+      </Routes>
     </BrowserRouter>
   </div>
-}
+)
 
 export default App;
