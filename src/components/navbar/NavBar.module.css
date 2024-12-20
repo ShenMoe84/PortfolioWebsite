@@ -1,0 +1,40 @@
+.active {
+    color: #ede485 !important;
+    text-decoration: underline;
+  }
+
+  .home {
+    color: aquamarine;
+    font-style: italic;
+    font-weight: bold;
+  }
+  
+  .link {
+    color: white;
+    font-weight: bold;
+    padding: 0 16px;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    background-color: white;
+    border-radius: 4px;
+    color: #1b3e77;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+  }
+  
+  .navBar {
+    align-items: center;
+    background-color: teal;
+    box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
+    color: #85b2ed;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    height: auto;
+    justify-content: space-around;
+    overflow: visible;
+    padding: 10px;
+    margin-bottom: 8px;
+    text-align: center;
+  }

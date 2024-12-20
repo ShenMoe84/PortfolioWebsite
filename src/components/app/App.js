@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import NavBar from '../navbar/NavBar';
+import NavBar from '../navbar/NavBar.js';
 import styles from './App.module.css';
 
 const App = () => (
@@ -8,12 +8,12 @@ const App = () => (
     <BrowserRouter>
       <Routes>
         <Route
-          exact path='/graduatework'
-          Component={NavBar}
+          path='/*'
+          element={<NavBar />}
         />
       </Routes>
     </BrowserRouter>
   </div>
-)
+);
 
 export default App;
