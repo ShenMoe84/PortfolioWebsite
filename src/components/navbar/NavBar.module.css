@@ -7,6 +7,7 @@
     color: aquamarine;
     font-style: italic;
     font-weight: bold;
+    text-decoration: none;
   }
   
   .link {
@@ -19,7 +20,7 @@
   .link:hover {
     background-color: white;
     border-radius: 4px;
-    color: #1b3e77;
+    color: purple;
     padding: 8px 16px;
     margin-bottom: 10px;
   }
