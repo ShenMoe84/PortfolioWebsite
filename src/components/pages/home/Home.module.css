@@ -1,6 +1,5 @@
-.sliderContainer {
-  max-width: 1200px;
-  width: 100%;
-  height: 1000px;
-  margin: 0 auto;
+.aboutSection {
+  background-color: #3597aa;
+  position: relative;
+  top: 200px;
 }

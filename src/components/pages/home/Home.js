@@ -9,7 +9,12 @@ const Home = () => {
 
   return (
     <div>
-      <ImageSlider imageUrls={images} />
+      <div>
+        <ImageSlider images={images} />
+      </div>
+      <div className={styles.aboutSection}>
+        
+      </div>
     </div>
   )
 }

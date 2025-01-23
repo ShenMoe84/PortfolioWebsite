@@ -1,44 +1,35 @@
-import React, { useState } from "react";
-import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
+import React, { useState, useEffect } from "react";
 import styles from './imageSlider.module.css'
 
-const ImageSlider = ({ imageUrls }) => {
+const ImageSlider = ({ images }) => {
   const [imageIndex, setImageIndex] = useState(0);
+  const delay = 4500;
 
-  const showNextImage = () => {
-    setImageIndex(index => {
-      if (index === imageUrls.length - 1) return 0;
-      return index + 1;
-    })
-  }
 
-  const showPreviousImage = () => {
-    setImageIndex(index => {
-      if (index === 0) return imageUrls.length-1;
-      return index - 1;
-    })
-  }
+  useEffect(() => {
+    setTimeout(
+      () =>
+        setImageIndex((prevImageIndex) =>
+          prevImageIndex === images.length - 1 ? 0 : prevImageIndex + 1
+        ), delay
+    );
+    return () => { };
+  }, [imageIndex, images.length])
 
   return (
-    <div className={styles.imgContainer}>
-      <img
-        className={styles.imgSliderImg}
-        src={imageUrls[imageIndex]}
-        alt="City Skylines" />
-      <button className={styles.imgSliderButton}
-        onClick={showNextImage}
-        style={{ left: 0 }}>
-        <ArrowBigLeft />
-      </button>
-      <button
-        className={styles.imgSliderButton}
-        onClick={showPreviousImage}
-        style={{ right: 0 }}>
-        <ArrowBigRight />
-      </button>
-
+    <div>
+      <div className={styles.imgContainer}>
+        <img
+          className={styles.imgSliderImg}
+          src={images[imageIndex]}
+          alt="Wichita and Chicago Skylines" />
+      </div>
+      <div className={styles.slideshowDots}>
+        {images.map((_, idx) => (
+          <div key = { idx } className = {styles.slideshowDot} ></div>
+        ))}
+      </div>
     </div>
-
   );
 };
 
