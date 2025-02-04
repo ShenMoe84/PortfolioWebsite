@@ -1,13 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from './imageSlider.module.css'
 
 const ImageSlider = ({ images }) => {
   const [imageIndex, setImageIndex] = useState(0);
+  const timoutRef = useRef(null);
   const delay = 4500;
 
+  const resetTimeout = () => {
+    if (timoutRef.current) {
+      clearTimeout(timoutRef.current);
+    }
+  }
 
   useEffect(() => {
-    setTimeout(
+    resetTimeout();
+    timoutRef.current = setTimeout(
       () =>
         setImageIndex((prevImageIndex) =>
           prevImageIndex === images.length - 1 ? 0 : prevImageIndex + 1
@@ -16,17 +23,23 @@ const ImageSlider = ({ images }) => {
     return () => { };
   }, [imageIndex, images.length])
 
+  const handleDotClick = (index) => {
+    setImageIndex(index);
+  };
+
   return (
     <div>
-      <div className={styles.imgContainer}>
+      <div className={styles.imgSliderContainer}>
         <img
           className={styles.imgSliderImg}
+          key={imageIndex}
           src={images[imageIndex]}
-          alt="Wichita and Chicago Skylines" />
+          alt="Two images alternating:the Wichita skyline, then the Chicago skyline." />
       </div>
       <div className={styles.slideshowDots}>
         {images.map((_, idx) => (
-          <div key = { idx } className = {styles.slideshowDot} ></div>
+          <div key={idx} className={`${styles.slideshowDot} ${imageIndex === idx ? `${styles.activeSlideshowDot}` : `${styles.slideshowDot}`}`}
+            onClick={() => handleDotClick(idx)}></div>
         ))}
       </div>
     </div>

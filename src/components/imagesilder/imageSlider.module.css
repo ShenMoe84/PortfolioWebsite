@@ -2,17 +2,20 @@
   box-sizing: border-box;
 }
 
-.imgContainer {
+.imgSliderContainer {
   width: 100%;
   height: 100%;
   position: relative;
+  text-align: center;
 }
 
 .imgSliderImg {
   object-fit: cover;
-  width: 100%;
-  height: 100%;
-  display: block;
+  width: 95%;
+  height: 85%;
+  display: inline-block;
+  border-radius: 20px;
+  transition: ease 1000ms;
 }
 
 .slideshowDots {
@@ -29,3 +32,6 @@
   background-color: #c4c4c4;
 }
 
+.activeSlideshowDot {
+  background-color: #515480;
+}

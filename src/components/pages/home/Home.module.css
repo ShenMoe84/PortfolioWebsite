@@ -1,5 +1,28 @@
-.aboutSection {
-  background-color: #3597aa;
+.aboutSectionContainer {
   position: relative;
   top: 200px;
+  text-align: center;
+}
+
+.aboutSection {
+  color: white;
+  font-style: italic;
+  font-family: Baskerville;
+  font-weight: bold;
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+.aboutParagraph{
+  color: white;
+  margin-left: 20%;
+  margin-right: 20%;
+  font-weight: bold;
+}
+
+.profilePic {
+  height: 30%;
+  width: 30%;
+  border-radius: 50%;
+
 }
