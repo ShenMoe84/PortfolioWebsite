@@ -4,7 +4,7 @@ import styles from './imageSlider.module.css'
 const ImageSlider = ({ images }) => {
   const [imageIndex, setImageIndex] = useState(0);
   const timoutRef = useRef(null);
-  const delay = 4500;
+  const delay = 8000;
 
   const resetTimeout = () => {
     if (timoutRef.current) {
@@ -34,7 +34,7 @@ const ImageSlider = ({ images }) => {
           className={styles.imgSliderImg}
           key={imageIndex}
           src={images[imageIndex]}
-          alt="Two images alternating:the Wichita skyline, then the Chicago skyline." />
+          alt="Slide show" />
       </div>
       <div className={styles.slideshowDots}>
         {images.map((_, idx) => (

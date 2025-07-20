@@ -16,6 +16,7 @@
   display: inline-block;
   border-radius: 20px;
   transition: ease 1000ms;
+  margin-top: 25px;
 }
 
 .slideshowDots {

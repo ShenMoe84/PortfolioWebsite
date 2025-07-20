@@ -1,11 +1,11 @@
 .aboutSectionContainer {
   position: relative;
-  top: 200px;
+  top: 75px;
   text-align: center;
 }
 
 .aboutSection {
-  color: white;
+  color: #e6c68c;
   font-style: italic;
   font-family: Baskerville;
   font-weight: bold;
@@ -18,6 +18,9 @@
   margin-left: 20%;
   margin-right: 20%;
   font-weight: bold;
+  font-family: Baskerville;
+  font-style: italic;
+  text-align: center;
 }
 
 .profilePic {

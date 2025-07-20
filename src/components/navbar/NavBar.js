@@ -13,6 +13,7 @@ const NavBar = () => {
         <NavLink to="/theatricalwork" className={({ isActive }) => isActive ? styles.active : styles.link}>Theatrical Work</NavLink>
         <NavLink to="/softwaredevelopment" className={({ isActive }) => isActive ? styles.active : styles.link}>Software Development</NavLink>
         <NavLink to="/productdevelopment" className={({ isActive }) => isActive ? styles.active : styles.link}>Product Development</NavLink>
+        <NavLink to="/misc" className={({ isActive }) => isActive ? styles.active : styles.link}>Misc and Sundry</NavLink>
       </div>
     </nav>
   );
