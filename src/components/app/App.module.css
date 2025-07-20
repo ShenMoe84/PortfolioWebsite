@@ -1,3 +1,18 @@
 body {
   background-color:  #3597aa;
 }
+
+footer {
+  min-height: 30px;  
+  background-color: #e6c68c;
+  box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 3px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  position: fixed;
+  text-align: center;
+  color: #515480;
+  font-weight: bold;
+}

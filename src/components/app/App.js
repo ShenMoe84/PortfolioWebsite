@@ -25,6 +25,9 @@ const App = () => (
         />
       </Routes>
     </BrowserRouter>
+    <footer>
+      <p>&#169; Sheena Monroe 2025</p>
+    </footer>
   </div>
 );
 
