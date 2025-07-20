@@ -3,6 +3,7 @@
   font-weight: bold;
   padding: 0 16px;
   text-decoration: none;
+  float: left;
 }
 
 .home {
@@ -19,8 +20,8 @@
   color: white;
   font-weight: bold;
   float: left;
-  display: block;
-  padding: 0 14px;
+  display: flex;
+  padding: 0 16px;
   text-decoration: none;
 }
 
