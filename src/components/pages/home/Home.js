@@ -2,7 +2,7 @@ import React from "react";
 import ImageSlider from "../../imagesilder/ImageSlider";
 import styles from '../home/Home.module.css';
 import Wichita from '../../../images/WichitaSkyline.jpeg';
-import Chicago from '../../../images/ChicagoSkyline.png.jpeg';
+import Chicago from '../../../images/ChicagoSkyline.jpeg';
 import ProfilePic from '../../../images/ProfilePic.jpeg'
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
         <ImageSlider images={images} />
       </div>
       <div className={styles.aboutSectionContainer}>
-        <h1 className={styles.aboutSection}>About</h1>
+        <h1 className={styles.aboutSection}>Hello!</h1>
         <img className={styles.profilePic} src={profilePic} alt="Sheena Monroe" />
         <p className={styles.aboutParagraph}>Welcome to my portfolio. I'm a Wichita, KS native, and recent Chicagoan. Much like this site, I am a perpetual work in progress and a forever student of life. I embrace
         all things colorful, unique, and interesting. Fortunately, I find a lot of things interesting, so I'm never truly bored.
