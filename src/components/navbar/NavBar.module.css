@@ -12,6 +12,10 @@
   padding-top: 5px;
 }
 
+.hamburger {
+  padding-top: 12px;
+}
+
 .home {
   color: #e6c68c;
   font-style: italic;
@@ -27,7 +31,6 @@
   color: white;
   font-weight: bold;
   float: left;
-  display: flex;
   text-decoration: none;
 }
 
@@ -36,9 +39,13 @@
 }
 
 .navCont {
-  display: flex;
+  display: none;
   flex-direction: column;
   width: 25%;
+}
+
+.navContClosed {
+  display: none;
 }
 
 .navBar {

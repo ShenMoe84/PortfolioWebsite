@@ -5,11 +5,7 @@ import { Fade as Hamburger } from "hamburger-react";
 
 const NavBar = () => {
 
-  const [isOpen, setOpen] = useState(false)
-
-  const handleToggle = () => {
-
-  }
+  const [isOpen, setOpen] = useState(true)
 
   return (
     <nav className={styles.navBar}>
@@ -17,13 +13,29 @@ const NavBar = () => {
         <NavLink to="/" className={styles.home}>Sheena Monroe</NavLink>
         <h3 className={styles.tagLine}>Innovation Driven | Solution Focused | Creativity Enthusiast</h3>
       </div>
-      <div className={styles.navCont}>
-        <NavLink to="/graduatework" className={({ isActive }) => isActive ? styles.active : styles.link}>Graduate Work</NavLink>
-        <NavLink to="/softwaredevelopment" className={({ isActive }) => isActive ? styles.active : styles.link}>Software Development</NavLink>
-        <NavLink to="/productdevelopment" className={({ isActive }) => isActive ? styles.active : styles.link}>Product Development</NavLink>
-        <NavLink to="/more" className={({ isActive }) => isActive ? styles.active : styles.link}>More</NavLink>
+      <div className={({ isOpen }) => isOpen ? styles.navCont : styles.navContClosed}>
+        <NavLink to="/graduatework"
+          className={({ isActive }) => isActive ? styles.active : styles.link}>Graduate Work</NavLink>
+        <NavLink to="/softwaredevelopment"
+          className={({ isActive }) => isActive ? styles.active : styles.link}>Software Development</NavLink>
+        <NavLink to="/productdevelopment"
+          className={({ isActive }) => isActive ? styles.active : styles.link}>Product Development</NavLink>
+        <NavLink to="/more"
+          className={({ isActive }) => isActive ? styles.active : styles.link}>More</NavLink>
       </div>
-      <Hamburger onToggle={setOpen}/>
+      <div className={styles.hamburger}>
+        <Hamburger
+          direction="left"
+          color="#fee7a1"
+          label="Show menu"
+          toggled={isOpen}
+          toggle={setOpen}
+          onToggle={toggled => {
+            if (toggled) {
+              setOpen(!isOpen)
+            }
+          }} />
+      </div>
     </nav>
   );
 };
