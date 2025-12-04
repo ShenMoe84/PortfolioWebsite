@@ -1,15 +1,14 @@
 .active {
-  color: #fee7a1 !important;
+  color: #e6c68c !important;
   font-weight: bold;
   text-decoration: none;
   float: left;
 }
 
 .headerCont {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
+  width: 65%;
   padding-top: 5px;
+  position: inherit;
 }
 
 .hamburger {
@@ -35,17 +34,13 @@
 }
 
 .link:hover {
-  color: #fee7a1;
+  color: #e6c68c;
 }
 
 .navCont {
-  display: none;
   flex-direction: column;
-  width: 25%;
-}
-
-.navContClosed {
-  display: none;
+  width: 20%;
+  font-size: 14px;
 }
 
 .navBar {
@@ -53,12 +48,10 @@
   box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
   display: flex;
   font-family: Arial, Helvetica, sans-serif;
-  justify-content: space-around;
+  justify-content: space-between;
   overflow: hidden;
-  padding: 20px;
+  padding: 30px;
   position: sticky;
-  text-align: left;
-  top: 0;
   z-index: 2;
 }
 
@@ -69,3 +62,4 @@
   font-size: 16px;
   text-align: left;
 }
+
