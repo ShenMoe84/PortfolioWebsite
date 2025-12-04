@@ -1,4 +1,18 @@
 .background {
   width: 100%;
-  opacity: 70%;
+  height: 100%;
+  opacity: 40%;
+  position: relative;
+  text-align: center;
+}
+
+.header {
+  font-family: Baskerville;
+  color: #3597aa;
+  font-style: italic;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -800%);
 }
