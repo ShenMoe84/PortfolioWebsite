@@ -1,4 +1,5 @@
 .aboutSectionContainer {
+  background-color: #3597aa;;
   position: relative;
   top: 75px;
   text-align: center;
@@ -17,11 +18,16 @@
   color: white;
   margin-left: 20%;
   margin-right: 20%;
-  margin-bottom: 20%;
+  padding-bottom: 75px;
   font-weight: bold;
   font-family: Baskerville;
   font-style: italic;
   text-align: center;
+}
+
+.background {
+  background-color: #3597aa;
+  height: 100%;
 }
 
 .profilePic {

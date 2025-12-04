@@ -10,7 +10,7 @@ const Home = () => {
   const profilePic = ProfilePic
 
   return (
-    <div>
+    <div className={styles.background}>
       <div>
         <ImageSlider images={images} />
       </div>
