@@ -1,18 +1,64 @@
 .background {
-  width: 100%;
-  height: 100%;
+  background-image: url(../../../images/LightbulbString.jpg);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
   opacity: 30%;
-  position: relative;
-  text-align: center;
+  position: absolute;
+}
+
+.bodyCont {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.button {
+  background-color: transparent;
+  border: 2px solid #a8efee
+}
+
+.buttonCont {
+  margin-top: 10px;
+}
+
+h2 {
+  margin-bottom: 5px;
+}
+
+h3 {
+  margin-top: 5px;
 }
 
 .header {
+  color: #515480;
   font-family: Baskerville;
-  color: #3597aa;
   font-style: italic;
-  position: absolute;
   text-align: center;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -800%);
+}
+
+.introPara {
+  font-weight: bold;
+  margin-top: 50px;
+  margin-left: 20%;
+  margin-right: 20%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.links {
+  text-decoration: none;
+  color: #515480;
+  font-family: Baskerville;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.pageCont {
+  position: relative;
 }

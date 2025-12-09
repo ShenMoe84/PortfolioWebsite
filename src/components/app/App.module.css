@@ -11,4 +11,5 @@ footer {
   text-align: center;
   color: #515480;
   font-weight: bold;
+  z-index: 0;
 }
