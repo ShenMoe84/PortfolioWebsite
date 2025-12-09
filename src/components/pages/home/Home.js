@@ -15,12 +15,13 @@ const Home = () => {
         <ImageSlider images={images} />
       </div>
       <div className={styles.aboutSectionContainer}>
-        <h1 className={styles.aboutSection}>Hello!</h1>
+        <h1 className={styles.aboutSection}>Hello</h1>
         <img className={styles.profilePic} src={profilePic} alt="Sheena Monroe" />
-        <p className={styles.aboutParagraph}>Welcome to my portfolio. I'm a Wichita, KS native, and recent Chicagoan. Much like this site, I am a perpetual work in progress and a forever student of life. I embrace
-        all things colorful, unique, and interesting. Fortunately, I find a lot of things interesting, so I'm never truly bored.
-        A maker of things, a writer of thoughts, a designer of dreams, I find myself solving problems large and small. 
-        Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.</p>
+        <p className={styles.aboutParagraph}>Welcome to my website! I am a Wichita, Kansas native and
+          recent Chicagoan. Much like this site, I consider myself a perpetual work in progress and a forever student.
+          I embrace all things colorful, unique, and interesting. Fortunately, many things fall into those categories, so I'm never truly bored.
+          A maker of things, a writer of thoughts, a designer of dreams, I find myself solving problems large and small.
+          Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.</p>
       </div>
     </div>
   )

@@ -16,7 +16,7 @@ const Button = ({
         <button
             data-testid={testId}
             className={className}
-            type="submit"
+            type="button"
             onClick={onClick}
         >
             {children}
