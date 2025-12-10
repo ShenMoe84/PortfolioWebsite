@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from './imageSlider.module.css'
 
-const ImageSlider = ({ images }) => {
+const ImageSlider = ({ images, delay }) => {
   const [imageIndex, setImageIndex] = useState(0);
   const timoutRef = useRef(null);
-  const delay = 10000;
 
   const resetTimeout = () => {
     if (timoutRef.current) {
@@ -21,7 +20,7 @@ const ImageSlider = ({ images }) => {
         ), delay
     );
     return () => { };
-  }, [imageIndex, images.length])
+  }, [imageIndex, images.length, delay])
 
   const handleDotClick = (index) => {
     setImageIndex(index);
@@ -34,7 +33,8 @@ const ImageSlider = ({ images }) => {
           className={styles.imgSliderImg}
           key={imageIndex}
           src={images[imageIndex]}
-          alt="Slide show" />
+          alt="Slide show"
+          delay={delay} />
       </div>
       <div className={styles.slideshowDots}>
         {images.map((_, idx) => (

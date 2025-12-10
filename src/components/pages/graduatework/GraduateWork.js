@@ -1,33 +1,11 @@
 import React from "react";
 import styles from "../graduatework/GraduateWork.module.css"
 import Button from "../../button/Button";
-import ImageSlider from "../../imagesilder/ImageSlider";
-import MainImage from "../../../images/Fairy Door/MainImage.jpeg";
-import Inspo from "../../../images/Fairy Door/Inspo.jpeg";
-import Drawing from "../../../images/Fairy Door/1Drawing.jpeg";
-import Router from "../../../images/Fairy Door/2Router.jpeg";
-import Jointer from "../../../images/Fairy Door/Jointer.jpeg";
-import Bandsaw from "../../../images/Fairy Door/3Bandsaw.jpeg";
-import Planer from "../../../images/Fairy Door/4Planer.jpeg";
-import Pieces from "../../../images/Fairy Door/5Pieces.jpeg";
-import Gluing from "../../../images/Fairy Door/6Gluing.jpeg";
-import PostGluing from "../../../images/Fairy Door/7PostGluing.jpeg";
-import DecorOptions from "../../../images/Fairy Door/8DecorOptions.jpeg";
-import FinalLayout from "../../../images/Fairy Door/9FinalLayout.jpeg";
-import Hinges from "../../../images/Fairy Door/9Hinges.jpeg";
-import ClockFace from "../../../images/Fairy Door/10ClockFace.jpeg";
-import ClockFinishing from "../../../images/Fairy Door/11ClockFinishing.jpeg";
-
-
+import ImageCarousel from "../../imageCarousel/ImageCarousel";
+import FairyDoorImages from "../../../data/FairyDoorImages.json";
 
 
 const GradWork = () => {
-  const fDImgs = [MainImage, Inspo, Drawing, Router, Jointer, Bandsaw, Planer, Pieces, Gluing, PostGluing, DecorOptions, FinalLayout,
-    Hinges, ClockFace, ClockFinishing]
-  const bCImgs = []
-  const wTImgs = []
-  const smProj = []
-
 
   return (
     <div className={styles.pageCont}>
@@ -55,7 +33,7 @@ const GradWork = () => {
           <div className={styles.fairyDoorCont}>
             <h2>Fairy Door Clock</h2>
             <div className={styles.fDImgs}>
-              <ImageSlider images={fDImgs} />
+              <ImageCarousel data={FairyDoorImages} />
             </div>
           </div>
           <div className={styles.bookcase}>

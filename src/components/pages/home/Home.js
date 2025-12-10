@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <div className={styles.background}>
       <div>
-        <ImageSlider images={images} />
+        <ImageSlider images={images} delay={10000} />
       </div>
       <div className={styles.aboutSectionContainer}>
         <h1 className={styles.aboutSection}>Hello</h1>
