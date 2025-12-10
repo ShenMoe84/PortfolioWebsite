@@ -37,7 +37,9 @@
   color: #e6c68c;
 }
 
+
 .navCont {
+  display: flex;
   flex-direction: column;
   width: 20%;
   font-size: 14px;

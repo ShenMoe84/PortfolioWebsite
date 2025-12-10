@@ -1,5 +1,5 @@
 .background {
-  background-image: url(../../../images/LightbulbString.jpg);
+  background-image: url(../../../images//Backgrounds/LightbulbString.jpg);
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
@@ -13,8 +13,6 @@
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100vw;
 }
 
@@ -25,6 +23,27 @@
 
 .buttonCont {
   margin-top: 10px;
+}
+
+.designT {
+  color: #515480;
+  font-family: Baskerville;
+  font-style: italic;
+  text-align: left;
+}
+
+.fairyDoorCont {
+  background-color: #3597aa;
+  color: #a8efee;
+  padding: 10px;
+}
+
+.fDImgs {
+
+}
+
+h1 {
+  margin-bottom: 5px;
 }
 
 h2 {
@@ -61,4 +80,12 @@ h3 {
 
 .pageCont {
   position: relative;
+}
+
+.prototyping {
+  color: #515480;
+  font-family: Baskerville;
+  font-style: italic;
+  text-align: left;
+  padding-bottom: 10px;
 }
