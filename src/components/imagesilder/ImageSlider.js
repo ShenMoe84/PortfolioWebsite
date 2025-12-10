@@ -4,7 +4,7 @@ import styles from './imageSlider.module.css'
 const ImageSlider = ({ images }) => {
   const [imageIndex, setImageIndex] = useState(0);
   const timoutRef = useRef(null);
-  const delay = 8000;
+  const delay = 10000;
 
   const resetTimeout = () => {
     if (timoutRef.current) {
