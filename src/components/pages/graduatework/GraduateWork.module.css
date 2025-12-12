@@ -23,12 +23,13 @@
 
 .buttonCont {
   margin-top: 10px;
+  text-align: center;
 }
 
 .designT {
   color: #515480;
   font-family: Baskerville;
-  font-style: italic;
+  font-style: bold;
   text-align: left;
 }
 
@@ -39,7 +40,11 @@
 }
 
 .fDImgs {
-
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -56,12 +61,13 @@ h3 {
 
 .header {
   color: #515480;
+  font-style: bold;
   font-family: Baskerville;
-  font-style: italic;
   text-align: center;
 }
 
 .introPara {
+  color:#515480;
   font-weight: bold;
   margin-top: 50px;
   margin-left: 20%;
@@ -85,7 +91,7 @@ h3 {
 .prototyping {
   color: #515480;
   font-family: Baskerville;
-  font-style: italic;
+  font-style: bold;
   text-align: left;
   padding-bottom: 10px;
 }

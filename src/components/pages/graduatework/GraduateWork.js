@@ -12,9 +12,11 @@ const GradWork = () => {
     <div className={styles.pageCont}>
       <img className={styles.background} alt="Shayla Kirby on Unsplash" />
       <div className={styles.bodyCont}>
-        <div className={styles.header}>
-          <h1>Masters of Innovation Design</h1>
-          <h2>Wichita State University 2018-2020</h2>
+        <div>
+          <div className={styles.header}>
+            <h1>Masters of Innovation Design</h1>
+            <h2>Wichita State University 2018-2020</h2>
+          </div>
           <div className={styles.buttonCont}>
             <Button className={styles.button}><a
               className={styles.links}

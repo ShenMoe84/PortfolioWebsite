@@ -15,7 +15,7 @@ import Finishing from "../images/FairyDoor/11ClockFinishing.jpeg";
 
 
 
-const FairyDoorImages = {
+const FairyDoorImages = [
     MainImage,
     Inspo,
     Drawing,
@@ -30,6 +30,6 @@ const FairyDoorImages = {
     FinalLayout,
     ClockFace,
     Finishing
-}
+]
 
 export default FairyDoorImages;

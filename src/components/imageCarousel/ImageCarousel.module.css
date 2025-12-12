@@ -3,8 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 600px;
-  width: 600px;
+  height: 700px;
+  width: 700px;
 }
 
 .image {
@@ -46,6 +46,18 @@
 
 .indicator {
   background-color: white;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 5px #555;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+.indicatorInactive {
+  background-color: gray;
   height: 1rem;
   width: 1rem;
   border-radius: 100%;
