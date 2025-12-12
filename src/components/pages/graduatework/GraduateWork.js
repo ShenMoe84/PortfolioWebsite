@@ -2,7 +2,8 @@ import React from "react";
 import styles from "../graduatework/GraduateWork.module.css"
 import Button from "../../button/Button";
 import ImageCarousel from "../../imageCarousel/ImageCarousel";
-import FairyDoorImages from "../../../data/FairyDoorImages.json";
+import FairyDoorImages from "../../../data/FairyDoorImages";
+
 
 
 const GradWork = () => {
