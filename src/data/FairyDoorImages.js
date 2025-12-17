@@ -1,19 +1,17 @@
-import MainImage from "../images/FairyDoor/MainImage.jpeg";
-import Inspo from "../images/FairyDoor/Inspo.jpeg";
-import Drawing from "../images/FairyDoor/1Drawing.jpeg";
-import Router from "../images/FairyDoor/2Router.jpeg";
-import Bandsaw from "../images/FairyDoor/3Bandsaw.jpeg";
-import Planer from "../images/FairyDoor/4Planer.jpeg";
-import Jointer from "../images/FairyDoor/Jointer.jpeg";
-import Pieces from "../images/FairyDoor/5Pieces.jpeg";
-import Gluing from "../images/FairyDoor/6Gluing.jpeg";
-import PostGluing from "../images/FairyDoor/7PostGluing.jpeg";
-import Decor from "../images/FairyDoor/8DecorOptions.jpeg";
-import FinalLayout from "../images/FairyDoor/9FinalLayout.jpeg";
-import ClockFace from "../images/FairyDoor/10ClockFace.jpeg";
-import Finishing from "../images/FairyDoor/11ClockFinishing.jpeg";
-
-
+import MainImage from "../images/FairyDoor/1Finished.jpeg";
+import Inspo from "../images/FairyDoor/2Inspo.jpeg";
+import Drawing from "../images/FairyDoor/3Drawing.jpeg";
+import Router from "../images/FairyDoor/4Router.jpeg";
+import Bandsaw from "../images/FairyDoor/5Bandsaw.jpeg";
+import Jointer from "../images/FairyDoor/6Jointer.jpeg";
+import Planer from "../images/FairyDoor/7Planer.jpeg";
+import Pieces from "../images/FairyDoor/8Pieces.jpeg";
+import Assembly from "../images/FairyDoor/9Assembly.jpeg";
+import Gluing from "../images/FairyDoor/10Gluing.jpeg";
+import DesignOptions from "../images/FairyDoor/11DesignOptions.jpeg";
+import FinalLayout from "../images/FairyDoor/12FinalLayout.jpeg";
+import ClockFace from "../images/FairyDoor/13ClockFace.jpeg";
+import Final from "../images/FairyDoor/14Final.jpeg";
 
 const FairyDoorImages = [
     MainImage,
@@ -21,15 +19,15 @@ const FairyDoorImages = [
     Drawing,
     Router,
     Bandsaw,
-    Planer,
     Jointer,
+    Planer,
     Pieces,
+    Assembly,
     Gluing,
-    PostGluing,
-    Decor,
+    DesignOptions,
     FinalLayout,
     ClockFace,
-    Finishing
+    Final
 ]
 
 export default FairyDoorImages;

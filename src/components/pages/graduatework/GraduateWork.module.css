@@ -14,11 +14,20 @@
   display: flex;
   flex-direction: column;
   width: 100vw;
+  height: 100vh;
+}
+
+.bookcaseCont {
+  background-color: #e6c68c;  
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .button {
-  background-color: transparent;
-  border: 2px solid #a8efee
+  background-color: #e6c68c;
+  border: none;
+  margin-top: 10px;
 }
 
 .buttonCont {
@@ -36,15 +45,9 @@
 .fairyDoorCont {
   background-color: #3597aa;
   color: #a8efee;
-  padding: 10px;
-}
-
-.fDImgs {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 h1 {
@@ -53,6 +56,8 @@ h1 {
 
 h2 {
   margin-bottom: 5px;
+  padding: 5px;
+  margin-block-start: 0em;
 }
 
 h3 {
@@ -90,8 +95,6 @@ h3 {
 
 .prototyping {
   color: #515480;
-  font-family: Baskerville;
   font-style: bold;
-  text-align: left;
-  padding-bottom: 10px;
+  text-align: center;
 }
