@@ -4,6 +4,7 @@ import Button from "../../button/Button";
 import ImageCarousel from "../../imageCarousel/ImageCarousel";
 import FairyDoorImages from "../../../data/FairyDoorImages";
 import BookcaseImages from "../../../data/BookcaseImages";
+import WorkTableImages from "../../../data/WorkTableImages.js";
 
 
 
@@ -44,8 +45,11 @@ const GradWork = () => {
               <ImageCarousel data={BookcaseImages} />
             </div>
           </div>
-          <div className={styles.workTable}>
+          <div className={styles.workTableCont}>
             <h2>Convertible Work Table</h2>
+            <div>
+              <ImageCarousel data={WorkTableImages} />
+            </div>
           </div>
           <div className={styles.smallerProj}>
             <h2>Smaller Projects</h2>

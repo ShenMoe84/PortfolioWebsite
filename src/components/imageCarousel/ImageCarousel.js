@@ -21,19 +21,29 @@ const ImageCarousel = ({ data }) => {
         Object.values(data).map((image, idx) => {
           return (
             <img className={currentImage === idx ? styles.image : styles.imageHidden}
-              src={image} alt="Project images" key={idx} />
+              src={image.src} alt="Project images" key={idx} />
           );
         })
       }
-      <SlArrowRight className={styles.arrowRight} onClick={nextSlide}/>
+      <SlArrowRight className={styles.arrowRight} onClick={nextSlide} />
       <span className={styles.indicators}>
         {
           Object.values(data).map((_, idx) => {
             return <button key={idx} onClick={() => setCurrentImage(idx)}
-              className={`${styles.indicator} ${currentImage === idx ? `${styles.indicator}` : `${styles.indicatorInactive}`}`}/>
+              className={`${styles.indicator} ${currentImage === idx ? `${styles.indicator}` : `${styles.indicatorInactive}`}`} />
           })
         }
       </span>
+      <div className={styles.textCont}>
+        {
+          Object.values(data).map((image, idx) => {
+            return (
+              <p key={idx} className={currentImage === idx ? styles.text : styles.textHidden}>
+                {image.text}
+              </p>
+            )
+          })}
+      </div>
     </div>
   )
 };
