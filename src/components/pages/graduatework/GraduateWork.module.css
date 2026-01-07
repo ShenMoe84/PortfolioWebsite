@@ -5,7 +5,7 @@
   background-size: cover;
   width: 100vw;
   height: 100vh;
-  opacity: 30%;
+  opacity: 40%;
   position: absolute;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .bookcaseCont {
-  background-color: #e6c68c;  
+  background-color:#e6c68c;  
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
@@ -37,9 +37,8 @@
 
 .designT {
   color: #515480;
-  font-family: Baskerville;
   font-style: bold;
-  text-align: left;
+  text-align: center;
 }
 
 .fairyDoorCont {
@@ -50,29 +49,20 @@
   object-fit: cover;
 }
 
-h1 {
-  margin-bottom: 5px;
-}
-
-h2 {
-  margin-bottom: 5px;
-  padding: 5px;
-  margin-block-start: 0em;
-}
-
-h3 {
-  margin-top: 5px;
-}
-
 .header {
   color: #515480;
   font-style: bold;
-  font-family: Baskerville;
   text-align: center;
 }
 
+.imageSliderTitles {
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 35px;
+}
+
 .introPara {
-  color:#515480;
+  color: black;
   font-weight: bold;
   margin-top: 50px;
   margin-left: 20%;
@@ -81,22 +71,29 @@ h3 {
   font-size: 18px;
 }
 
-.links {
+.link {
   text-decoration: none;
   color: #515480;
-  font-family: Baskerville;
   font-weight: bold;
   font-size: 16px;
+}
+
+p {
+  margin-top: 0em;
 }
 
 .pageCont {
   position: relative;
 }
 
-.prototyping {
+.sectionTitles {
   color: #515480;
   font-style: bold;
   text-align: center;
+}
+
+.smallerProj {
+  background-color: #a8efee;
 }
 
 .workTableCont {

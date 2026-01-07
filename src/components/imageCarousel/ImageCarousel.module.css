@@ -69,9 +69,9 @@
 }
 
 .textCont {
+  font-size: 18px;
   position: bottom;
-  top: 2rem;
-  bottom: 0rem;
+  padding-top: 1rem;
 }
 
 .text {

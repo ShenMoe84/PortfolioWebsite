@@ -7,7 +7,6 @@
 
 .aboutSection {
   color: #e6c68c;
-  font-style: italic;
   font-family: Baskerville;
   font-weight: bold;
   font-size: 32px;
@@ -20,8 +19,6 @@
   margin-right: 20%;
   padding-bottom: 75px;
   font-weight: bold;
-  font-family: Baskerville;
-  font-style: italic;
   text-align: center;
   font-size: 18px;
 }
