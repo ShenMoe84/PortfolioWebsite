@@ -23,7 +23,7 @@ const GradWork = () => {
           <Button className={styles.button}><a
             className={styles.link}
             href="https://www.wichita.edu/academics/college-of-innovation-and-design/master-innovation-design/index.php">
-            Learn More About MID</a></Button>
+            Learn More About Current MID Curriculum</a></Button>
         </div>
         <div>
           <p className={styles.introPara}>In the late 2010s, I was once again trying to decide who and what I wanted to be when I grow up.
@@ -50,9 +50,10 @@ const GradWork = () => {
             <ImageCarousel data={SmallProjectsImages} />
           </div>
         </div>
-        <div className={styles.background} alt="Shayla Kirby on Unsplash" />
-        <div className={styles.sectionTitles}>
+        <div  className={styles.header}>
+          <div className={styles.background} alt="Shayla Kirby on Unsplash" />
           <h1>Design Thinking</h1>
+          <h2>Framework, Facilitation, Service Design</h2>
         </div>
       </div>
     </div>

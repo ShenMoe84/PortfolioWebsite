@@ -3,7 +3,7 @@ footer {
   background-color: #e6c68c;
   box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
   font-family: Arial, Helvetica, sans-serif;
-  padding: 3px;
+  padding-top: 20px;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -11,5 +11,5 @@ footer {
   text-align: center;
   color: #515480;
   font-weight: bold;
-  z-index: 0;
+  z-index: 5;
 }

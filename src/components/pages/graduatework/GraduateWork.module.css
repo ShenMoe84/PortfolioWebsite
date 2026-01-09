@@ -1,12 +1,13 @@
 .background {
   background-image: url(../../../images//Backgrounds/LightbulbString.jpg);
-  background-position: center;
-  background-repeat: repeat;
   background-size: cover;
+  background-position: center;
+  background-blend-mode: lighten;
+  background-color: rgba(255, 255, 255, 0.6);
   width: 100vw;
   height: 100vh;
-  opacity: 40%;
   position: absolute;
+  z-index: -1;
 }
 
 .bodyCont {
@@ -18,7 +19,8 @@
 }
 
 .bookcaseCont {
-  background-color:#e6c68c;  
+  background-color:#e6c68c;
+  color: #515480;  
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
@@ -33,6 +35,7 @@
 .buttonCont {
   margin-top: 10px;
   text-align: center;
+  z-index: 1;
 }
 
 .designT {
@@ -47,12 +50,15 @@
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
+  z-index: 2;
+  position: relative;
 }
 
 .header {
   color: #515480;
   font-style: bold;
   text-align: center;
+  z-index: 1;
 }
 
 .imageSliderTitles {
@@ -62,13 +68,17 @@
 }
 
 .introPara {
-  color: black;
+  color: #515480;
   font-weight: bold;
   margin-top: 50px;
-  margin-left: 20%;
-  margin-right: 20%;
-  text-align: center;
+  margin-left: 30%;
+  margin-right: 30%;
+  position: relative;
+  text-align: left;
+  text-indent: 2em;
   font-size: 18px;
+  z-index: 1;
+
 }
 
 .link {
@@ -90,6 +100,8 @@ p {
   color: #515480;
   font-style: bold;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .smallerProj {
