@@ -1,4 +1,4 @@
-.background {
+.lbBackground {
   background-image: url(../../../images//Backgrounds/LightbulbString.jpg);
   background-size: cover;
   background-position: center;
@@ -38,10 +38,26 @@
   z-index: 1;
 }
 
+.dTBackground {
+  background-image: url(../../../images//Backgrounds/DTStickies.jpg);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: lighten;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+}
+
 .designT {
   color: #515480;
   font-style: bold;
   text-align: center;
+}
+
+.dTNonLinear {
+  height: 100vh;
 }
 
 .fairyDoorCont {

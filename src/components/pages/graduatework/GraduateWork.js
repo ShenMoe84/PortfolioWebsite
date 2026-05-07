@@ -6,6 +6,8 @@ import FairyDoorImages from "../../../data/FairyDoorImages";
 import BookcaseImages from "../../../data/BookcaseImages";
 import WorkTableImages from "../../../data/WorkTableImages.js";
 import SmallProjectsImages from "../../../data/SmallProjects.js";
+import DTNonLinear from "../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
+import DTStickies from "../../../images/Backgrounds/DTStickies.jpg";
 
 
 
@@ -13,7 +15,7 @@ const GradWork = () => {
 
   return (
     <div className={styles.pageCont}>
-      <div className={styles.background} alt="Shayla Kirby on Unsplash" />
+      <div className={styles.lbBackground} alt="Shayla Kirby on Unsplash" />
       <div className={styles.bodyCont}>
         <div className={styles.header}>
           <h1>Masters of Innovation Design</h1>
@@ -46,14 +48,13 @@ const GradWork = () => {
             <ImageCarousel data={WorkTableImages} />
           </div>
           <div className={styles.smallerProj}>
-            <p className={styles.imageSliderTitles}>Smaller Projects</p>
+            <p className={styles.imageSliderTitles}>Small Projects</p>
             <ImageCarousel data={SmallProjectsImages} />
           </div>
         </div>
         <div  className={styles.header}>
-          <div className={styles.background} alt="Shayla Kirby on Unsplash" />
-          <h1>Design Thinking</h1>
-          <h2>Framework, Facilitation, Service Design</h2>
+          <div className={styles.dTBackground} alt="Hugo Rocha on Unsplash" />
+          <img className={styles.dTNonLinear} src={DTNonLinear}/>
         </div>
       </div>
     </div>
