@@ -25,7 +25,7 @@ const App = () => (
           path='graduatework'
           element={<GradWork />} />
         <Route
-          path='graduatework/Projects' 
+          path='graduatework/projects' 
           element={<Projects />}/>  
 
         <Route
