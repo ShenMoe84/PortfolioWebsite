@@ -1,0 +1,42 @@
+
+.bookcaseCont {
+  background-color:#e6c68c;
+  color: #515480;  
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.fairyDoorCont {
+  background-color: #3597aa;
+  color: #a8efee;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  z-index: 2;
+  position: relative;
+}
+
+.imageSliderTitles {
+  font-size: 28px;
+  font-weight: bold;
+  padding-top: 35px;
+}
+
+.sectionTitles {
+  color: #515480;
+  font-style: bold;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.smallerProj {
+  background-color: #a8efee;
+}
+
+.workTableCont {
+  background-color: #515480;
+  color: #a8efee;
+}
+

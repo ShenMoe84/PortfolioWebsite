@@ -18,14 +18,6 @@
   height: 100vh;
 }
 
-.bookcaseCont {
-  background-color:#e6c68c;
-  color: #515480;  
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-}
-
 .button {
   background-color: #e6c68c;
   border: none;
@@ -60,16 +52,6 @@
   height: 100vh;
 }
 
-.fairyDoorCont {
-  background-color: #3597aa;
-  color: #a8efee;
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  z-index: 2;
-  position: relative;
-}
-
 .header {
   color: #515480;
   font-style: bold;
@@ -77,11 +59,7 @@
   z-index: 1;
 }
 
-.imageSliderTitles {
-  font-size: 28px;
-  font-weight: bold;
-  padding-top: 35px;
-}
+
 
 .introPara {
   color: #515480;
@@ -101,7 +79,8 @@
   text-decoration: none;
   color: #515480;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 36px;
+  padding-top: 20px;
 }
 
 p {
@@ -112,19 +91,4 @@ p {
   position: relative;
 }
 
-.sectionTitles {
-  color: #515480;
-  font-style: bold;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
 
-.smallerProj {
-  background-color: #a8efee;
-}
-
-.workTableCont {
-  background-color: #515480;
-  color: #a8efee;
-}
