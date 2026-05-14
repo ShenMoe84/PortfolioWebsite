@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../graduatework/GraduateWork.module.css"
+import styles from "../graduatestudies/GraduateStudies.module.css"
 import DTNonLinear from "../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
 import DTStickies from "../../../images/Backgrounds/DTStickies.jpg";
 

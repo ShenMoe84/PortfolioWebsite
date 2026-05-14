@@ -23,12 +23,12 @@ const NavBar = () => {
         {isOpen && (
           <div
             className={styles.navCont}>
-            <NavLink to="/graduatework"
-              className={({ isActive }) => isActive ? styles.active : styles.link}>Graduate Work</NavLink>
+            <NavLink to="/graduatestudies"
+              className={({ isActive }) => isActive ? styles.active : styles.link}>Graduate Studies</NavLink>
+            <NavLink to="/graduatestudies/projects"
+              className={({ isActive }) => isActive ? styles.active : styles.link}>{">"}Projects</NavLink>
             <NavLink to="/softwaredevelopment"
               className={({ isActive }) => isActive ? styles.active : styles.link}>Software Development</NavLink>
-            <NavLink to="/productdevelopment"
-              className={({ isActive }) => isActive ? styles.active : styles.link}>Product Development</NavLink>
             <NavLink to="/more"
               className={({ isActive }) => isActive ? styles.active : styles.link}>More</NavLink>
           </div>)}
