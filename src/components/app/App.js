@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from '../navbar/NavBar.js';
 import Home from '../pages/home/Home.js'
-import styles from './App.module.css';
 import NotFound from '../notfound/NotFound.js';
 import GradStudies from '../pages/graduatestudies/GraduateStudies.js';
 import Projects from '../pages/graduatestudies/projects/Projects.js';

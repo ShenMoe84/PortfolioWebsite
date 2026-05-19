@@ -1,11 +1,9 @@
 import React from "react";
 import styles from "../graduatestudies/GraduateStudies.module.css"
 import DTNonLinear from "../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
-import DTStickies from "../../../images/Backgrounds/DTStickies.jpg";
 
 
-
-const GradWork = () => {
+const GradStudies = () => {
 
   return (
     <div className={styles.pageCont}>
@@ -34,4 +32,4 @@ const GradWork = () => {
   );
 };
 
-export default GradWork;
+export default GradStudies;
