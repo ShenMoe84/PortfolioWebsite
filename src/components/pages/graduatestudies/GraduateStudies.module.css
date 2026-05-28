@@ -12,20 +12,29 @@
 .categories {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: #692181;
+  justify-content: space-evenly;
+  font-weight: bold;
+}
+
+.catCont {
+  background: linear-gradient(90deg,rgba(94, 58, 126, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+  padding-bottom: 60px;
 }
 
 .categorybox {
-  border: #e6c68c;
+  border: black;
   border-style: solid;
-  border-radius: 5px;
-  color: #a8efee;
-  width: 20%;
-  height: 20%;
-  padding: 10px;
-  margin: 20px;
+  border-radius: 20px;
+  border-width: 2px;
+  color: black;
+  width: 20em;
+  padding: 1.6em;
+  margin: .5em;
+}
+
+.catheading {
+  font-size: 1.5em;
+  padding-top: 0em;
 }
 
 .dTBackground {
@@ -36,7 +45,6 @@
   background-color: rgba(255, 255, 255, 0.6);
   width: 100vw;
   height: 100vh;
-  z-index: -1;
 }
 
 .designT {
@@ -46,23 +54,30 @@
 }
 
 .dTNonLinear {
-  height: 100vh;
+  height: 50em;
+  width: 50em;
 }
 
-.header {
+.header1 {
   color: #515480;
   font-style: bold;
   text-align: center;
-  padding-top: 70px;
+  padding-top: 60px;
+}
+
+.header2 {
+  text-align: center;
+  padding-top: 60px;
 }
 
 .introPara {
   color: #516480;
   font-weight: bold;
   margin-top: 50px;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: 20%;
+  margin-right: 20%;
   position: relative;
+  padding-bottom: 30px;
   text-align: left;
   text-indent: 2em;
   font-size: 22px;
@@ -70,11 +85,18 @@
 
 }
 
+.item {
+  
+}
+
 .link {
   text-decoration: none;
   color: #515480;
   font-weight: bold;
   font-size: 36px;
+}
+
+.unlist {
 }
 
 

@@ -5,6 +5,7 @@ import FairyDoorImages from "../../../../data/FairyDoorImages.js";
 import BookcaseImages from "../../../../data/BookcaseImages.js";
 import WorkTableImages from "../../../../data/WorkTableImages.js";
 import SmallProjectsImages from "../../../../data/SmallProjects.js";
+import DTNonLinear from "../../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
 
 const Projects = () => {
   return (
@@ -25,6 +26,11 @@ const Projects = () => {
       <div className={styles.smallerProj}>
         <p className={styles.imageSliderTitles}>Small Projects</p>
         <ImageCarousel data={SmallProjectsImages} />
+      </div>
+      <div>
+        <div className={styles.dTBackground} alt="Hugo Rocha Unsplash">
+          <img className={styles.dTNonLinear} alt="Design Thinking diagram" src={DTNonLinear} />
+        </div>
       </div>
     </div>
   )
