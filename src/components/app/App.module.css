@@ -1,15 +1,21 @@
-footer {
-  min-height: 30px;  
+.body {
+ min-height: calc(100vh-34px);
+ padding-bottom: 40px;
+}
+
+.footer {
+  min-height: 34px;  
   background-color: #e6c68c;
   box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.2);
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 20px;
   left: 0;
+  margin-top: auto;
   bottom: 0;
   width: 100%;
   position: fixed;
   text-align: center;
   color: #515480;
   font-weight: bold;
-  z-index: 5;
+  z-index: 1;
 }
