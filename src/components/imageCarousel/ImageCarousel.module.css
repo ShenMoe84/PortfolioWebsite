@@ -2,16 +2,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   aspect-ratio: 1/1;
 }
 
 .image {
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   box-shadow: 0px 0px 7px #666;
-  width: 85%;
-  object-fit: cover;
+  width: 80em;
+  aspect-ratio: 1/1;
 }
 
 .imageHidden {
@@ -27,11 +27,11 @@
 }
 
 .arrowLeft {
-  left: 1rem;
+  left: 5rem;
 }
 
 .arrowRight {
-  right: 1rem;
+  right: 5rem;
 }
 
 .arrowLeft:hover, .arrowRight:hover {
@@ -41,7 +41,7 @@
 .indicators {
   display: flex;
   position: absolute;
-  bottom: 1rem;
+  bottom: 5rem;
 }
 
 .indicator {
@@ -69,13 +69,13 @@
 }
 
 .textCont {
-  font-size: 18px;
+  font-size: 1.8em;
   position: bottom;
-  padding-top: 1rem;
 }
 
 .text {
   color: black;
+  padding: 0 3em;
 }
 
 .textHidden {

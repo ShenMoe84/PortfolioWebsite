@@ -9,23 +9,25 @@ import DTNonLinear from "../../../../images/DesignThinking/td-design-thinking-no
 
 const Projects = () => {
   return (
-    <div className={styles.sectionTitles}>
-      <h1>Prototyping & Product Design</h1>
-      <div className={styles.fairyDoorCont}>
-        <p className={styles.imageSliderTitles}>Fairy Door Clock</p>
-        <ImageCarousel data={FairyDoorImages} />
-      </div>
-      <div className={styles.bookcaseCont}>
-        <p className={styles.imageSliderTitles}>Steampunk Bookcase</p>
-        <ImageCarousel data={BookcaseImages} />
-      </div>
-      <div className={styles.workTableCont}>
-        <p className={styles.imageSliderTitles}>Convertible Work Table</p>
-        <ImageCarousel data={WorkTableImages} />
-      </div>
-      <div className={styles.smallerProj}>
-        <p className={styles.imageSliderTitles}>Small Projects</p>
-        <ImageCarousel data={SmallProjectsImages} />
+    <div>
+      <div>
+        <h1 className={styles.sectionTitles}>Prototyping & Product Design</h1>
+        <div className={styles.fairyDoorCont}>
+          <p className={styles.imageSliderTitles}>Fairy Door Clock</p>
+          <ImageCarousel data={FairyDoorImages} />
+        </div>
+        <div className={styles.bookcaseCont}>
+          <p className={styles.imageSliderTitles}>Steampunk Bookcase</p>
+          <ImageCarousel data={BookcaseImages} />
+        </div>
+        <div className={styles.workTableCont}>
+          <p className={styles.imageSliderTitles}>Convertible Work Table</p>
+          <ImageCarousel data={WorkTableImages} />
+        </div>
+        <div className={styles.smallerProj}>
+          <p className={styles.imageSliderTitles}>Small Projects</p>
+          <ImageCarousel data={SmallProjectsImages} />
+        </div>
       </div>
       <div>
         <div className={styles.dTBackground} alt="Hugo Rocha Unsplash">

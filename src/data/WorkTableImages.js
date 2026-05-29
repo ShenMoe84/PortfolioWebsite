@@ -21,7 +21,7 @@ import Paint from "../images/WorkTable/16Paint.jpeg";
 const WorkTableImages = [
   {
     src: InUse,
-    text: "Somehow I didn't have any photos of the finished product other than this one of the table in use in my Chicago apartment. Alas, it is now buried in a storage unit after a recent move. Almost visible is the removeable shelf that rests on the lower side supports."
+    text: "Somehow I didn't have any photos of the finished product other than this one of the table in use in my Chicago apartment. Alas, it is now inaccessible in a storage unit after moving. Almost visible is the removeable shelf that rests on the lower side supports."
   },
   {
     src: Prototype1,
