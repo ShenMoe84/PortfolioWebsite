@@ -1,0 +1,13 @@
+.container {
+  max-width: 650px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper {
+  border-bottom: 1px solid black;
+  overflow: hidden;
+}

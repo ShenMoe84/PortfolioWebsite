@@ -3,7 +3,7 @@ import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 import styles from "./ImageCarousel.module.css"
 
 
-const ImageCarousel = ({ data }) => {
+const ImageCarousel = ({ data, bgColor }) => {
   const [currentImage, setCurrentImage] = useState(0);
 
   const nextSlide = () => {

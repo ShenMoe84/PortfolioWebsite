@@ -26,7 +26,7 @@ const App = () => (
           element={<GradStudies />} />
         <Route
           path='graduatestudies/projects'
-          element={<Projects />} />
+          element={<Projects isOpen={false} />} />
 
         <Route
           element={<NotFound />}

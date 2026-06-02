@@ -1,12 +1,37 @@
 
+.arrow {
+  color: #515480;
+  display: inline-block;
+  font-size: 2em;
+  padding-bottom: .5em;
+  transition: transform 0.3s ease;
+}
+
+.arrow.active {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.customTrigger {
+  background: linear-gradient(90deg,rgba(94, 58, 126, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f1f1f1;
+  padding: 10px;
+  cursor: pointer;
+}
+
 .bookcaseCont {
   background-color:#e6c68c;
-  color: #515480;  
+  color: #515480;
+  width: 100vw;  
 }
 
 .fairyDoorCont {
   background-color: #3597aa;
   color: #a8efee;
+  width: 100vw;
 }
 
 h1, p {
@@ -16,22 +41,28 @@ h1, p {
 .imageSliderTitles {
   font-size: 2em;
   font-weight: bold;
-  padding-top: 1.5em;
+  padding: 1em;
   text-align: center;
+}
+
+.image {
+  width: 100%;
 }
 
 .sectionTitles {
-  color: #515480;
-  font-style: bold;
-  text-align: center;
+  color: #e6c68c;
+  text-align: left;
 }
 
-.smallerProj {
+.smallProjCont {
   background-color: #a8efee;
+  color: #515480;
+  width: 100vw;
 }
 
 .workTableCont {
   background-color: #515480;
   color: #a8efee;
+  width: 100vw;
 }
 
