@@ -7,18 +7,19 @@
   transition: transform 0.3s ease;
 }
 
-.arrow.active {
+.open {
   transform: rotate(180deg);
   transition: transform 0.3s ease;
 }
 
 .customTrigger {
   background: linear-gradient(90deg,rgba(94, 58, 126, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+  border-bottom: black;
+  border-width: 2px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #f1f1f1;
-  padding: 10px;
+  padding: 15px;
   cursor: pointer;
 }
 

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Collapsible from "react-collapsible";
-import { RiArrowDropDownLine } from "react-icons/ri";
 import styles from "../projects/Projects.module.css"
 import ImageCarousel from "../../../imageCarousel/ImageCarousel.js";
 import FairyDoorImages from "../../../../data/FairyDoorImages.js";
@@ -9,15 +8,22 @@ import WorkTableImages from "../../../../data/WorkTableImages.js";
 import SmallProjectsImages from "../../../../data/SmallProjects.js";
 import DTNonLinear from "../../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
 
-const Projects = ({ isOpen }) => {
+const Projects = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen)
+  }
 
   return (
     <div>
-      <Collapsible trigger={
-        <div className={styles.customTrigger}>
-          <h1 className={styles.sectionTitles}>Prototyping & Product Design</h1>
-          <span className={`${styles.arrow} ${isOpen ? 'active' : ''}`}>&#8964;</span>
-        </div>}>
+      <Collapsible trigger=
+        {
+          <div onClick={handleOpen} className={styles.customTrigger}>
+            <h1 className={styles.sectionTitles}>Prototyping/Physical Product Development</h1>
+            <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+          </div>
+        }>
         <div className={styles.fairyDoorCont}>
           <p className={styles.imageSliderTitles}>Fairy Door Clock</p>
           <ImageCarousel data={FairyDoorImages} />
@@ -35,10 +41,23 @@ const Projects = ({ isOpen }) => {
           <ImageCarousel data={SmallProjectsImages} />
         </div>
       </Collapsible>
-      <Collapsible trigger={<h1>Design Thinking</h1>} className={styles.sectionTitles}>
-        <div className={styles.image}>
-          <img alt="Design Thinking Process Chart" src={DTNonLinear} />
-        </div>
+      <Collapsible trigger={
+        <div onClick={handleOpen} className={styles.customTrigger}>
+          <h1 className={styles.sectionTitles}>Design Thinking</h1>
+          <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+        </div>}>
+      </Collapsible>
+      <Collapsible trigger={
+        <div onClick={handleOpen} className={styles.customTrigger}>
+          <h1 className={styles.sectionTitles}>Branding</h1>
+          <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+        </div>}>
+      </Collapsible>
+      <Collapsible trigger={
+        <div onClick={handleOpen} className={styles.customTrigger}>
+          <h1 className={styles.sectionTitles}>Digital Product Development</h1>
+          <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+        </div>}>
       </Collapsible>
     </div>
   )
