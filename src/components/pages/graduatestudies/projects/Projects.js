@@ -16,17 +16,15 @@ const Projects = () => {
       ...prev,
       [accordionPosition]: !prev[accordionPosition]
     }));
-  }
-
-  console.log(isOpen)
+  };
 
   return (
     <div>
-      <Collapsible accordionPosition={Number("1")} trigger=
+      <Collapsible accordionPosition={"1"} trigger=
         {
-          <div onClick={() => handleTriggerClick(Number("1"))} className={styles.customTrigger}>
+          <div onClick={() => handleTriggerClick(1)} className={styles.customTrigger}>
             <h1 className={styles.sectionTitles}>Prototyping/Physical Product Development</h1>
-            <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+            <span className={`${styles.arrow} ${isOpen[1] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
           </div>
         }>
         <div className={styles.fairyDoorCont}>
@@ -46,23 +44,26 @@ const Projects = () => {
           <ImageCarousel data={SmallProjectsImages} />
         </div>
       </Collapsible>
-      <Collapsible accordionPosition={Number("2")} trigger={
-        <div onClick={() => handleTriggerClick(Number("2"))} className={styles.customTrigger}>
+      <Collapsible accordionPosition={"2"} trigger={
+        <div onClick={() => handleTriggerClick(2)} className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Design Thinking</h1>
-          <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
-        </div>}>
+          <span className={`${styles.arrow} ${isOpen[2] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+          </div>}>
+          <p>Content Goes Here</p>
       </Collapsible>
-      <Collapsible trigger={
-        <div className={styles.customTrigger}>
+      <Collapsible accordionPosition={"3"} trigger={
+        <div onClick={() => handleTriggerClick(3)} className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Branding</h1>
-          <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+          <span className={`${styles.arrow} ${isOpen[3] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
+        <p>Content Goes Here</p>
       </Collapsible>
-      <Collapsible trigger={
-        <div className={styles.customTrigger}>
+      <Collapsible accordionPosition={"4"} trigger={
+        <div onClick={() => handleTriggerClick(4)} className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Digital Product Development</h1>
-          <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+          <span className={`${styles.arrow} ${isOpen[4] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
+        <p>Content Goes Here</p>
       </Collapsible>
     </div>
   )
