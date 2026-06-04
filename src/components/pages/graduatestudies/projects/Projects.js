@@ -11,15 +11,20 @@ import DTNonLinear from "../../../../images/DesignThinking/td-design-thinking-no
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpen = () => {
-    setIsOpen(!isOpen)
+  const handleTriggerClick = (accordionPosition) => {
+    setIsOpen(prev => ({
+      ...prev,
+      [accordionPosition]: !prev[accordionPosition]
+    }));
   }
+
+  console.log(isOpen)
 
   return (
     <div>
-      <Collapsible trigger=
+      <Collapsible accordionPosition={Number("1")} trigger=
         {
-          <div onClick={handleOpen} className={styles.customTrigger}>
+          <div onClick={() => handleTriggerClick(Number("1"))} className={styles.customTrigger}>
             <h1 className={styles.sectionTitles}>Prototyping/Physical Product Development</h1>
             <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
           </div>
@@ -41,20 +46,20 @@ const Projects = () => {
           <ImageCarousel data={SmallProjectsImages} />
         </div>
       </Collapsible>
-      <Collapsible trigger={
-        <div onClick={handleOpen} className={styles.customTrigger}>
+      <Collapsible accordionPosition={Number("2")} trigger={
+        <div onClick={() => handleTriggerClick(Number("2"))} className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Design Thinking</h1>
           <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
       </Collapsible>
       <Collapsible trigger={
-        <div onClick={handleOpen} className={styles.customTrigger}>
+        <div className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Branding</h1>
           <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
       </Collapsible>
       <Collapsible trigger={
-        <div onClick={handleOpen} className={styles.customTrigger}>
+        <div className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Digital Product Development</h1>
           <span className={`${styles.arrow} ${isOpen ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
