@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../graduatestudies/GraduateStudies.module.css"
-import DTNonLinear from "../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
+import { HashLink } from "react-router-hash-link";
 
 
 const GradStudies = () => {
@@ -29,31 +29,31 @@ const GradStudies = () => {
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Prototyping</p>
               <ul className={styles.unlist}>
-                <li>Products</li>
+                <HashLink smooth to="graduatestudies/projects/section1"><li>Products</li></HashLink>
                 <li>Services</li>
                 <li>Processes</li>
               </ul>
             </div>
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Design Thinking</p>
-              <ul>
-                <li>Process</li>
+              <ul className={styles.unlist}>
+                <a href="graduatestudies/projects"><li>Process</li></a>
                 <li>Facilitation</li>
-                <li>Implementation</li>
+                <a href="graduatestudies/projects"><li>Implementation</li></a>
               </ul>
             </div>
           </div>
           <div className={styles.categories}>
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Branding</p>
-              <ul>
+              <ul className={styles.unlist}>
                 <li>Building</li>
-                <li>Strategy</li>
+                <a href="graduatestudies/projects"><li>Strategy</li></a>
               </ul>
             </div>
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Product Development</p>
-              <ul>
+              <ul className={styles.unlist}>
                 <li>Process</li>
                 <li>Optimization</li>
               </ul>

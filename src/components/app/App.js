@@ -26,7 +26,7 @@ const App = () => (
           element={<GradStudies />} />
         <Route
           path='graduatestudies/projects'
-          element={<Projects isOpen={false} />} />
+          element={<Projects accordionPositions={["section1", "section2", "section3", "section4"]} />} />
 
         <Route
           element={<NotFound />}

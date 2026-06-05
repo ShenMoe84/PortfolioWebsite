@@ -34,7 +34,7 @@
 
 .catheading {
   font-size: 1.5em;
-  padding-top: 0em;
+  padding-bottom: .5em ;
 }
 
 .dTBackground {
@@ -67,7 +67,7 @@
 
 .header2 {
   text-align: center;
-  padding-top: 60px;
+  padding: 40px;
 }
 
 .introPara {
@@ -85,10 +85,6 @@
 
 }
 
-.item {
-  
-}
-
 .link {
   text-decoration: none;
   color: #515480;
@@ -97,6 +93,8 @@
 }
 
 .unlist {
+  padding-left: 1em;
+  font-size: 1.3em;
 }
 
 
