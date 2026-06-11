@@ -27,7 +27,7 @@ const Projects = () => {
     const list = document.getElementsByClassName('project-list');
     const clickedSection = searchParams.get('section');
 
-    const openRightSection = (clickedSection) => {
+    const findRightSection = (clickedSection) => {
       const sectionToOpen = Array.from(list).find(element => {
         const index = element.getAttribute("data-index")
         if (index === clickedSection) {
@@ -36,22 +36,24 @@ const Projects = () => {
         }
       }
       )
+      console.log(sectionToOpen)
       return sectionToOpen
     }
-    openRightSection(clickedSection);
-    /*     if ( === sectionClicked) {
-           setIsOpen(true)
-           handleTriggerClick(sectionClicked)
-         } */
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 2000);
+    findRightSection(clickedSection);
+    handleTriggerClick(clickedSection)
+    return () => clearTimeout(timer)
   }, [searchParams]);
 
   return (
     <div>
       <Collapsible trigger=
         {
-          <div onClick={() => handleTriggerClick(1)} className={styles.customTrigger}>
+          <div onClick={() => handleTriggerClick(0)} className={styles.customTrigger}>
             <h1 className={styles.sectionTitles}>Prototyping/Physical Product Development</h1>
-            <span className={`${styles.arrow} ${isOpen[1] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+            <span className={`${styles.arrow} ${isOpen[0] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
           </div>
         }>
         <div className="project-list" data-index="0">
@@ -74,9 +76,9 @@ const Projects = () => {
         </div>
       </Collapsible>
       <Collapsible trigger={
-        <div onClick={() => handleTriggerClick(2)} className={styles.customTrigger}>
+        <div onClick={() => handleTriggerClick(1)} className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Design Thinking</h1>
-          <span className={`${styles.arrow} ${isOpen[2] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+          <span className={`${styles.arrow} ${isOpen[1] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
         <div className="project-list" data-index="1">
           <p>Content Goes Here</p>
@@ -84,18 +86,18 @@ const Projects = () => {
         <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Chart" />
       </Collapsible>
       <Collapsible trigger={
-        <div onClick={() => handleTriggerClick(3)} className={styles.customTrigger}>
+        <div onClick={() => handleTriggerClick(2)} className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Branding</h1>
-          <span className={`${styles.arrow} ${isOpen[3] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+          <span className={`${styles.arrow} ${isOpen[2] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
         <div className="project-list" data-index="2">
           <p>Content Goes Here</p>
         </div>
       </Collapsible>
       <Collapsible trigger={
-        <div onClick={() => handleTriggerClick(4)} className={styles.customTrigger}>
+        <div onClick={() => handleTriggerClick(3)} className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Digital Product Development</h1>
-          <span className={`${styles.arrow} ${isOpen[4] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
+          <span className={`${styles.arrow} ${isOpen[3] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
         <div className="project-list" data-index="3">
           <p>Content Goes Here</p>
