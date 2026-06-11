@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Collapsible from "react-collapsible";
 import styles from "../projects/Projects.module.css"
@@ -9,9 +9,11 @@ import WorkTableImages from "../../../../data/WorkTableImages.js";
 import SmallProjectsImages from "../../../../data/SmallProjects.js";
 import DTNonLinear from "../../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
 
-const Projects = ( {accordionPositions}) => {
+const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchParams] = useSearchParams();
+
+
 
   const handleTriggerClick = (accordionPosition) => {
     setIsOpen(prev => ({
@@ -20,28 +22,39 @@ const Projects = ( {accordionPositions}) => {
     }));
   };
 
+
   useEffect(() => {
-    const getAccPosition = () => {
-      for (const accordionPosition of accordionPositions) {
-        return accordionPosition;
-      };
-    };
-    const targetSection = searchParams.get(getAccPosition());
-    if (targetSection === getAccPosition()) {
-      setIsOpen(true)
+    const list = document.getElementsByClassName('project-list');
+    const clickedSection = searchParams.get('section');
+
+    const openRightSection = (clickedSection) => {
+      const sectionToOpen = Array.from(list).find(element => {
+        const index = element.getAttribute("data-index")
+        if (index === clickedSection) {
+          console.log(index)
+          return index
+        }
+      }
+      )
+      return sectionToOpen
     }
-  }, [accordionPositions, searchParams]);
+    openRightSection(clickedSection);
+    /*     if ( === sectionClicked) {
+           setIsOpen(true)
+           handleTriggerClick(sectionClicked)
+         } */
+  }, [searchParams]);
 
   return (
     <div>
-      <Collapsible accordionPosition={"1"} trigger=
+      <Collapsible trigger=
         {
           <div onClick={() => handleTriggerClick(1)} className={styles.customTrigger}>
             <h1 className={styles.sectionTitles}>Prototyping/Physical Product Development</h1>
             <span className={`${styles.arrow} ${isOpen[1] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
           </div>
         }>
-        <div id="section1">
+        <div className="project-list" data-index="0">
           <div className={styles.fairyDoorCont}>
             <p className={styles.imageSliderTitles}>Fairy Door Clock</p>
             <ImageCarousel data={FairyDoorImages} />
@@ -60,31 +73,31 @@ const Projects = ( {accordionPositions}) => {
           </div>
         </div>
       </Collapsible>
-      <Collapsible accordionPosition={"2"} trigger={
+      <Collapsible trigger={
         <div onClick={() => handleTriggerClick(2)} className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Design Thinking</h1>
           <span className={`${styles.arrow} ${isOpen[2] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
-        <div id="section2">
+        <div className="project-list" data-index="1">
           <p>Content Goes Here</p>
         </div>
         <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Chart" />
       </Collapsible>
-      <Collapsible accordionPosition={"3"} trigger={
+      <Collapsible trigger={
         <div onClick={() => handleTriggerClick(3)} className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Branding</h1>
           <span className={`${styles.arrow} ${isOpen[3] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
-        <div id="section3" >
+        <div className="project-list" data-index="2">
           <p>Content Goes Here</p>
         </div>
       </Collapsible>
-      <Collapsible accordionPosition={"4"} trigger={
+      <Collapsible trigger={
         <div onClick={() => handleTriggerClick(4)} className={styles.customTrigger}>
           <h1 className={styles.sectionTitles}>Digital Product Development</h1>
           <span className={`${styles.arrow} ${isOpen[4] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>}>
-        <div id="section4" >
+        <div className="project-list" data-index="3">
           <p>Content Goes Here</p>
         </div>
       </Collapsible>

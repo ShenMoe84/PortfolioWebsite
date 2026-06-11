@@ -18,15 +18,18 @@ const App = () => (
       </Routes>
       <Routes>
         <Route
+          exact
           path='/'
           element={<Home />}
         />
         <Route
-          path='graduatestudies'
+          exact
+          path='/graduatestudies'
           element={<GradStudies />} />
         <Route
-          path='graduatestudies/projects'
-          element={<Projects accordionPositions={["section1", "section2", "section3", "section4"]} />} />
+          exact
+          path='graduatestudies/projects/*'
+          element={<Projects />} />
 
         <Route
           element={<NotFound />}
