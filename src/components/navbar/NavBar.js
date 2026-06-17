@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { NavLink } from 'react-router-dom';
-import Collapsible from "react-collapsible";
 import styles from './NavBar.module.css';
 import { Fade as Hamburger } from "hamburger-react";
 

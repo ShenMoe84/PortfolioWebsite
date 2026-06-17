@@ -1,0 +1,29 @@
+.arrow {
+  color: #515480;
+  display: inline-block;
+  font-size: 2em;
+  padding-bottom: .5em;
+  transition: transform 0.3s ease;
+}
+
+.open {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.customTrigger {
+  background: linear-gradient(90deg,rgba(94, 58, 126, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+  border-bottom: black;
+  border-width: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.sectionTitles {
+  color: #e6c68c;
+  text-align: left;
+}
+

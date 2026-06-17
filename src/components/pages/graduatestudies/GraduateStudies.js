@@ -29,7 +29,7 @@ const GradStudies = () => {
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Prototyping</p>
               <ul className={styles.unlist}>
-                <HashLink smooth to="./projects?section=0"><li>Products</li></HashLink>
+                <HashLink smooth to="./projects?section=1"><li>Products</li></HashLink>
                 <li>Services</li>
                 <li>Processes</li>
               </ul>
@@ -37,9 +37,9 @@ const GradStudies = () => {
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Design Thinking</p>
               <ul className={styles.unlist}>
-                <HashLink smooth to="./projects?section=1"><li>Process</li></HashLink>
+                <HashLink smooth to="./projects?section=2"><li>Process</li></HashLink>
                 <li>Facilitation</li>
-                <HashLink smooth to="./projects?section=1"><li>Implementation</li></HashLink>
+                <HashLink smooth to="./projects?section=2"><li>Implementation</li></HashLink>
               </ul>
             </div>
           </div>
@@ -48,7 +48,7 @@ const GradStudies = () => {
               <p className={styles.catheading}>Branding</p>
               <ul className={styles.unlist}>
                 <li>Building</li>
-                <HashLink smooth to="./projects?section=2"><li>Strategy</li></HashLink>
+                <HashLink smooth to="./projects?section=3"><li>Strategy</li></HashLink>
               </ul>
             </div>
             <div className={styles.categorybox}>

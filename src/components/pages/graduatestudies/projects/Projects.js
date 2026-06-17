@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { createRef, useCallback, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import Collapsible from "react-collapsible";
 import styles from "../projects/Projects.module.css"
@@ -8,55 +8,49 @@ import BookcaseImages from "../../../../data/BookcaseImages.js";
 import WorkTableImages from "../../../../data/WorkTableImages.js";
 import SmallProjectsImages from "../../../../data/SmallProjects.js";
 import DTNonLinear from "../../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
+import CollapsibleItem from "../../../collapsible/CollapsibleItem.js";
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [elRefs, setElRefs] = useState([]);
   const [searchParams] = useSearchParams();
 
+  const clickedSection = searchParams.get('section');
+  const projsList = document.getElementsByClassName('project-list');
+  const sectionToOpen = Array.from(projsList).find(project => {
+    const index = project.getAttribute("dataIndex")
+    if (index === clickedSection) {
+      return index;
+    }
+    return clickedSection;
+  });
+  const projsRef = useRef([clickedSection]);
 
 
-  const handleTriggerClick = (accordionPosition) => {
+
+  const handleTriggerClick = useCallback((accordionPosition) => {
     setIsOpen(prev => ({
       ...prev,
       [accordionPosition]: !prev[accordionPosition]
     }));
-  };
+    setElRefs(sectionToOpen);
+  },[sectionToOpen]);
 
 
   useEffect(() => {
-    const list = document.getElementsByClassName('project-list');
-    const clickedSection = searchParams.get('section');
-
-    const findRightSection = (clickedSection) => {
-      const sectionToOpen = Array.from(list).find(element => {
-        const index = element.getAttribute("data-index")
-        if (index === clickedSection) {
-          console.log(index)
-          return index
-        }
-      }
-      )
-      console.log(sectionToOpen)
-      return sectionToOpen
-    }
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 2000);
-    findRightSection(clickedSection);
-    handleTriggerClick(clickedSection)
-    return () => clearTimeout(timer)
-  }, [searchParams]);
+    
+    handleTriggerClick(sectionToOpen)
+  }, [handleTriggerClick, sectionToOpen]);
 
   return (
     <div>
-      <Collapsible trigger=
-        {
-          <div onClick={() => handleTriggerClick(0)} className={styles.customTrigger}>
-            <h1 className={styles.sectionTitles}>Prototyping/Physical Product Development</h1>
-            <span className={`${styles.arrow} ${isOpen[0] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
-          </div>
-        }>
-        <div className="project-list" data-index="0">
+      <CollapsibleItem
+        dataIndex={1}
+        onClick={() => handleTriggerClick(1)}
+        title="Prototyping/Physical Product Development"
+        isOpen={isOpen}
+        projRef={(proj) => (projsRef.current[sectionToOpen] = proj)}>
+        <div>
           <div className={styles.fairyDoorCont}>
             <p className={styles.imageSliderTitles}>Fairy Door Clock</p>
             <ImageCarousel data={FairyDoorImages} />
@@ -74,35 +68,35 @@ const Projects = () => {
             <ImageCarousel data={SmallProjectsImages} />
           </div>
         </div>
-      </Collapsible>
-      <Collapsible trigger={
-        <div onClick={() => handleTriggerClick(1)} className={styles.customTrigger}>
-          <h1 className={styles.sectionTitles}>Design Thinking</h1>
-          <span className={`${styles.arrow} ${isOpen[1] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
-        </div>}>
-        <div className="project-list" data-index="1">
+      </CollapsibleItem>
+      <CollapsibleItem
+        dataIndex={2}
+        onClick={() => handleTriggerClick(2)}
+        title="Design Thinking"
+        isOpen={isOpen}>
+        <div>
           <p>Content Goes Here</p>
         </div>
         <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Chart" />
-      </Collapsible>
-      <Collapsible trigger={
-        <div onClick={() => handleTriggerClick(2)} className={styles.customTrigger}>
-          <h1 className={styles.sectionTitles}>Branding</h1>
-          <span className={`${styles.arrow} ${isOpen[2] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
-        </div>}>
-        <div className="project-list" data-index="2">
+      </CollapsibleItem>
+      <CollapsibleItem
+        dataIndex={3}
+        onClick={() => handleTriggerClick(3)}
+        title="Branding"
+        isOpen={isOpen}>
+        <div>
           <p>Content Goes Here</p>
         </div>
-      </Collapsible>
-      <Collapsible trigger={
-        <div onClick={() => handleTriggerClick(3)} className={styles.customTrigger}>
-          <h1 className={styles.sectionTitles}>Digital Product Development</h1>
-          <span className={`${styles.arrow} ${isOpen[3] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
-        </div>}>
-        <div className="project-list" data-index="3">
+      </CollapsibleItem>
+      <CollapsibleItem
+        dataIndex={4}
+        onClick={() => handleTriggerClick(4)}
+        title="Digital Product Development"
+        isOpen={isOpen}>
+        <div>
           <p>Content Goes Here</p>
         </div>
-      </Collapsible>
+      </CollapsibleItem>
     </div>
   )
 }
