@@ -1,6 +1,6 @@
-import React, { createRef, useCallback, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import Collapsible from "react-collapsible";
+
 import styles from "../projects/Projects.module.css"
 import ImageCarousel from "../../../imageCarousel/ImageCarousel.js";
 import FairyDoorImages from "../../../../data/FairyDoorImages.js";
@@ -12,35 +12,53 @@ import CollapsibleItem from "../../../collapsible/CollapsibleItem.js";
 
 const Projects = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [elRefs, setElRefs] = useState([]);
   const [searchParams] = useSearchParams();
-
-  const clickedSection = searchParams.get('section');
-  const projsList = document.getElementsByClassName('project-list');
-  const sectionToOpen = Array.from(projsList).find(project => {
-    const index = project.getAttribute("dataIndex")
-    if (index === clickedSection) {
-      return index;
-    }
-    return clickedSection;
-  });
-  const projsRef = useRef([clickedSection]);
+  const sectionRef = useRef(null);
 
 
 
-  const handleTriggerClick = useCallback((accordionPosition) => {
+  const handleTriggerClick = (accordionPosition) => {
     setIsOpen(prev => ({
       ...prev,
       [accordionPosition]: !prev[accordionPosition]
     }));
-    setElRefs(sectionToOpen);
-  },[sectionToOpen]);
+  };
 
 
   useEffect(() => {
+    // First, we get the list of project sections.
+    const sectionList = document.getElementsByClassName('project-list');
+
+    //Second, we get the search parameters that involved the wors 'section', which returns a number.
+    const clickedSection = searchParams.get('section');
+
+    //Next, we take that number and check to see if it matches the data-index number embedded in the section itself.
+    const findRightSection = (clickedSection) => {
+      //Make an array from the sections
+      const sectionToOpen = Array.from(sectionList).find(projectSection => {
+        //Find each of their data-indexes
+        const index = projectSection.getAttribute("data-index");
+        //If the data-index matches the section that was clicked
+        if (index === clickedSection) {
+          //set the state to true
+          console.log(index)
+          return index;
+          
+        }
+      })
+      console.log(sectionToOpen)
+      return sectionToOpen
+    }
+
+    const timer = setTimeout(() => {
+      setIsOpen(true);
+    }, 1500);
+
+    findRightSection(clickedSection);
     
-    handleTriggerClick(sectionToOpen)
-  }, [handleTriggerClick, sectionToOpen]);
+
+    return () => clearTimeout(timer)
+  }, [searchParams]);
 
   return (
     <div>
@@ -48,8 +66,7 @@ const Projects = () => {
         dataIndex={1}
         onClick={() => handleTriggerClick(1)}
         title="Prototyping/Physical Product Development"
-        isOpen={isOpen}
-        projRef={(proj) => (projsRef.current[sectionToOpen] = proj)}>
+        isOpen={isOpen}>
         <div>
           <div className={styles.fairyDoorCont}>
             <p className={styles.imageSliderTitles}>Fairy Door Clock</p>
@@ -77,7 +94,6 @@ const Projects = () => {
         <div>
           <p>Content Goes Here</p>
         </div>
-        <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Chart" />
       </CollapsibleItem>
       <CollapsibleItem
         dataIndex={3}
@@ -97,6 +113,7 @@ const Projects = () => {
           <p>Content Goes Here</p>
         </div>
       </CollapsibleItem>
+      <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Chart" />
     </div>
   )
 }
