@@ -3,13 +3,13 @@ import Collapsible from "react-collapsible";
 import styles from "./CollapsibleItem.module.css"
 
 const CollapsibleItem = ({
-  children, dataIndex, onClick, title, isOpen, sectRef
+  children, data, dataIndex, id, onClick, title, isOpen
 }) => {
 
   return (
     <Collapsible trigger=
       {
-        <div ref={sectRef} data-index={dataIndex} onClick={onClick} className={`${styles.customTrigger} ${"project-list"}`}>
+        <div id={id} data-index={dataIndex} onClick={onClick} className={`${styles.customTrigger} ${"project-list"}`}>
           <h1 className={styles.sectionTitle}>{title}</h1>
           <span className={`${styles.arrow} ${isOpen[`${dataIndex}`] ? `${styles.open}` : `${styles.arrow}`}`}>&#8964;</span>
         </div>

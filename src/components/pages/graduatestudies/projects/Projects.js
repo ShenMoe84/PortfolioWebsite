@@ -10,12 +10,15 @@ import SmallProjectsImages from "../../../../data/SmallProjects.js";
 import DTNonLinear from "../../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
 import CollapsibleItem from "../../../collapsible/CollapsibleItem.js";
 
-const Projects = () => {
+const Projects = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchParams] = useSearchParams();
-  const sectionRef = useRef(null);
 
+  const simulateClick = (e) => {
+    e.click();
+  }
 
+  const sectionList = document.getElementsByClassName('project-list');
 
   const handleTriggerClick = (accordionPosition) => {
     setIsOpen(prev => ({
@@ -24,49 +27,42 @@ const Projects = () => {
     }));
   };
 
-
   useEffect(() => {
-    // First, we get the list of project sections.
-    const sectionList = document.getElementsByClassName('project-list');
 
-    //Second, we get the search parameters that involved the wors 'section', which returns a number.
     const clickedSection = searchParams.get('section');
 
-    //Next, we take that number and check to see if it matches the data-index number embedded in the section itself.
     const findRightSection = (clickedSection) => {
-      //Make an array from the sections
       const sectionToOpen = Array.from(sectionList).find(projectSection => {
-        //Find each of their data-indexes
+
         const index = projectSection.getAttribute("data-index");
-        //If the data-index matches the section that was clicked
         if (index === clickedSection) {
-          //set the state to true
-          console.log(index)
+          console.log(clickedSection)
           return index;
-          
         }
       })
       console.log(sectionToOpen)
       return sectionToOpen
     }
+    
+    simulateClick(findRightSection(clickedSection))
 
     const timer = setTimeout(() => {
       setIsOpen(true);
     }, 1500);
 
-    findRightSection(clickedSection);
-    
 
     return () => clearTimeout(timer)
-  }, [searchParams]);
+  }, [searchParams, sectionList]);
 
   return (
     <div>
       <CollapsibleItem
+        id={"section1"}
         dataIndex={1}
         onClick={() => handleTriggerClick(1)}
         title="Prototyping/Physical Product Development"
-        isOpen={isOpen}>
+        isOpen={isOpen}
+      >
         <div>
           <div className={styles.fairyDoorCont}>
             <p className={styles.imageSliderTitles}>Fairy Door Clock</p>
