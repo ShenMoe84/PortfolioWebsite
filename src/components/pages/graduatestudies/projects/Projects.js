@@ -16,6 +16,10 @@ const Projects = ({ data }) => {
 
   const simulateClick = (e) => {
     e.click();
+    window.scrollTo({
+      top: true,
+      behavior: "smooth"
+    })
   }
 
   const sectionList = document.getElementsByClassName('project-list');
@@ -33,14 +37,11 @@ const Projects = ({ data }) => {
 
     const findRightSection = (clickedSection) => {
       const sectionToOpen = Array.from(sectionList).find(projectSection => {
-
         const index = projectSection.getAttribute("data-index");
         if (index === clickedSection) {
-          console.log(clickedSection)
           return index;
         }
       })
-      console.log(sectionToOpen)
       return sectionToOpen
     }
     
@@ -89,6 +90,7 @@ const Projects = ({ data }) => {
         isOpen={isOpen}>
         <div>
           <p>Content Goes Here</p>
+          <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Chart" />
         </div>
       </CollapsibleItem>
       <CollapsibleItem
@@ -109,7 +111,7 @@ const Projects = ({ data }) => {
           <p>Content Goes Here</p>
         </div>
       </CollapsibleItem>
-      <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Chart" />
+      <div className={styles.lbBackground} alt="Shayla Kirby Unsplash"/>
     </div>
   )
 }
