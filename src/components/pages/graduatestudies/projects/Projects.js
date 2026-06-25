@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-
 import styles from "../projects/Projects.module.css"
 import ImageCarousel from "../../../imageCarousel/ImageCarousel.js";
 import FairyDoorImages from "../../../../data/FairyDoorImages.js";
@@ -14,6 +13,16 @@ const Projects = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchParams] = useSearchParams();
 
+  
+  const sectionList = document.getElementsByClassName('project-list');
+  
+  const handleTriggerClick = (accordionPosition) => {
+    setIsOpen(prev => ({
+      ...prev,
+      [accordionPosition]: !prev[accordionPosition]
+    }));
+  };
+  
   const simulateClick = (e) => {
     e.click();
     window.scrollTo({
@@ -21,15 +30,6 @@ const Projects = ({ data }) => {
       behavior: "smooth"
     })
   }
-
-  const sectionList = document.getElementsByClassName('project-list');
-
-  const handleTriggerClick = (accordionPosition) => {
-    setIsOpen(prev => ({
-      ...prev,
-      [accordionPosition]: !prev[accordionPosition]
-    }));
-  };
 
   useEffect(() => {
 
