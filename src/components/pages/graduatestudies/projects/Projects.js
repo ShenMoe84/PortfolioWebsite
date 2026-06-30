@@ -12,8 +12,7 @@ import CollapsibleItem from "../../../collapsible/CollapsibleItem.js";
 const Projects = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchParams] = useSearchParams();
-
-  
+   
   const sectionList = document.getElementsByClassName('project-list');
   
   const handleTriggerClick = (accordionPosition) => {
@@ -47,12 +46,6 @@ const Projects = ({ data }) => {
     
     simulateClick(findRightSection(clickedSection))
 
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 1500);
-
-
-    return () => clearTimeout(timer)
   }, [searchParams, sectionList]);
 
   return (

@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../graduatestudies/GraduateStudies.module.css"
 import { HashLink } from "react-router-hash-link";
+import PopUp from "../../popup/PopUp";
 
 
-const GradStudies = () => {
+
+const GradStudies = ({ data }) => {
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [currentPopUp, setCurrentPopUp] = useState(0);
+
+  const popUpButtonList = document.getElementsByClassName("popUp-list");
+
+  const handlePopUp = () => {
+    setShowPopUp(!showPopUp)
+  }
+
+  const findRightPopUp = (id) => {
+    const matchingPopUp = Array.from(data).find(popUp => data.id === id);
+    setShowPopUp(true);
+    return matchingPopUp;
+  }
+
 
   return (
     <div className={styles.pageCont}>
@@ -29,17 +46,17 @@ const GradStudies = () => {
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Prototyping</p>
               <ul className={styles.unlist}>
-                <HashLink smooth to="./projects?section=1"><li>Products</li></HashLink>
-                <li>Services</li>
-                <li>Processes</li>
+                <HashLink to="./projects?section=1"><li>Products</li></HashLink>
+                <li><button data-index={0} className="popUp-list" onMouseEnter={() => findRightPopUp(0)}>Services</button></li>
+                <li><button data-index={1} className="popUp-list" onMouseEnter={() => findRightPopUp(setCurrentPopUp(1))}>Processes</button></li>
               </ul>
             </div>
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Design Thinking</p>
               <ul className={styles.unlist}>
-                <HashLink smooth to="./projects?section=2"><li>Process</li></HashLink>
-                <li>Facilitation</li>
-                <HashLink smooth to="./projects?section=2"><li>Implementation</li></HashLink>
+                <HashLink to="./projects?section=2"><li>Process</li></HashLink>
+                <li><button data-index={2} className="popUp-list">Facilitation</button></li>
+                <HashLink to="./projects?section=2"><li>Implementation</li></HashLink>
               </ul>
             </div>
           </div>
@@ -47,17 +64,33 @@ const GradStudies = () => {
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Branding</p>
               <ul className={styles.unlist}>
-                <li>Building</li>
-                <HashLink smooth to="./projects?section=3"><li>Strategy</li></HashLink>
+                <li><button data-index={3} className="popUp-list">Building</button></li>
+                <HashLink to="./projects?section=3"><li>Strategy</li></HashLink>
               </ul>
             </div>
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Product Development</p>
               <ul className={styles.unlist}>
-                <li>Process</li>
-                <li>Optimization</li>
+                <li><button data-index={4} className="popUp-list">Process</button></li>
+                <li><button data-index={5} className="popUp-list">Optimization</button></li>
               </ul>
             </div>
+          </div>
+          <div className={styles.popUpCont}>
+            {showPopUp && Object.values(data).map((popUp, idx) => {
+              return (
+                <PopUp
+                  key={idx}
+                  showPopUp={showPopUp}
+                  currentPopUp={currentPopUp}
+                  idx={idx}
+                  closePopUp={() => setShowPopUp(false)}
+                >
+                  {popUp.text}
+                </PopUp>
+              )
+            }
+            )}
           </div>
         </div>
       </div>
