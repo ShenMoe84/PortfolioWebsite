@@ -23,7 +23,7 @@ button {
 
 .catCont {
   background: linear-gradient(90deg,rgba(94, 58, 126, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
-  padding-bottom: 60px;
+  padding-bottom: 2.5em;
 }
 
 .categorybox {
@@ -32,14 +32,14 @@ button {
   border-radius: 20px;
   border-width: 2px;
   color: black;
-  width: 20em;
-  padding: 1.6em;
-  margin: .5em;
+  width: 18em;
+  padding: 1.4em;
+  margin: .8em;
 }
 
 .catheading {
   font-size: 1.5em;
-  padding-bottom: .5em ;
+  padding-bottom: .7em ;
 }
 
 .dTBackground {
@@ -64,7 +64,6 @@ button {
 }
 
 .header1 {
-  color: #515480;
   font-style: bold;
   text-align: center;
   padding-top: 60px;
@@ -76,7 +75,7 @@ button {
 }
 
 .introPara {
-  color: #516480;
+  color: black;
   font-weight: bold;
   margin-top: 50px;
   margin-left: 20%;
@@ -92,14 +91,17 @@ button {
 
 .link {
   text-decoration: none;
-  color: #515480;
+  color: black;
   font-weight: bold;
   font-size: 36px;
 }
 
-.popUpCont {
-  position: relative;
+.popUpText {
+  padding: .8em;
+  color: black;
 }
+
+
 
 .unlist {
   padding-left: 1em;

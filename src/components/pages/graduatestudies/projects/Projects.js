@@ -54,7 +54,7 @@ const Projects = ({ data }) => {
         id={"section1"}
         dataIndex={1}
         onClick={() => handleTriggerClick(1)}
-        title="Prototyping/Physical Product Development"
+        title="Prototyping: Physical Product Development"
         isOpen={isOpen}
       >
         <div>

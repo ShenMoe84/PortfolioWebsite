@@ -12,7 +12,7 @@ const PopUpObjects = [
   {
     id: 2,
     title: "DT: Facilitation",
-    text: "Facilitation of Design Thinking sessions in a corporate setting involves leveling the playing field amongst coworkers, and encouraging the sharing of ideas so that one may trigger another to bring about true innovation."
+    text: "Facilitating Design Thinking sessions in a corporate setting involves leveling the playing field amongst all coworkers, and encouraging the sharing of ideas so that one may trigger another."
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const PopUpObjects = [
   {
     id: 5,
     title: "Product Development: Optimization",
-    text: "What's the Minimum Viable Product (MVP)? User feedback comes into play to streamline and refine."
+    text: "What's the Minimum Viable Product (MVP)? How can it be incrementally improved? User feedback comes into play to streamline and refine."
   }]
 
 export default PopUpObjects;

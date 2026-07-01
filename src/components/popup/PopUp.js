@@ -6,8 +6,8 @@ const PopUp = ({ showPopUp, closePopUp, currentPopUp, idx, children }) => {
 
   return (
     <div className={currentPopUp === idx ? styles.popUp : styles.popUpHidden}>
-      <button className={styles.popUpButton} onClick={closePopUp}>X</button>
       {children}
+      <button className={styles.popUpButton} onClick={closePopUp}>X</button>
     </div>
   )
 }

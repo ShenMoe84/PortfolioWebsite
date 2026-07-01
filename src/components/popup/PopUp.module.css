@@ -1,23 +1,27 @@
 .popUpButton {
-  position: relative;
-  margin-right: 2px;
+  position: fixed;
+  top: .5em;
+  right: .5em;
+  font-size: 1.3em;
 }
 
 .popUp{
   position: absolute;
   left: 50%;
-  width: 20%;
+  width: 20em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  transform: translate(-50%, -350%);
-  margin-top: 8px;
-  padding: 12px;
+  transform: translate(-50%, -110%);
+  padding: 1em;
   background-color: white;
-  color: #516480;
+  color: black;
   font-weight: bold;
   border-radius: 4px;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   white-space: wrap;
-  z-index: 100;
+  z-index: 50;
 }
 
 .popUpHidden {
