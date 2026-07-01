@@ -9,11 +9,6 @@ const GradStudies = ({ data }) => {
   const [showPopUp, setShowPopUp] = useState(false);
   const [currentPopUp, setCurrentPopUp] = useState(0);
 
-  const popUpButtonList = document.getElementsByClassName("popUp-list");
-
-  const handlePopUp = () => {
-    setShowPopUp(!showPopUp)
-  }
 
   const findRightPopUp = (id) => {
     const matchingPopUp = Array.from(data).find(popUp => data.id === id);
@@ -47,15 +42,15 @@ const GradStudies = ({ data }) => {
               <p className={styles.catheading}>Prototyping</p>
               <ul className={styles.unlist}>
                 <HashLink to="./projects?section=1"><li>Products</li></HashLink>
-                <li><button data-index={0} className="popUp-list" onMouseEnter={() => findRightPopUp(0)}>Services</button></li>
-                <li><button data-index={1} className="popUp-list" onMouseEnter={() => findRightPopUp(setCurrentPopUp(1))}>Processes</button></li>
+                <li><button data-index={0} onMouseEnter={() => findRightPopUp(setCurrentPopUp(0))}>Services</button></li>
+                <li><button data-index={1} onMouseEnter={() => findRightPopUp(setCurrentPopUp(1))}>Processes</button></li>
               </ul>
             </div>
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Design Thinking</p>
               <ul className={styles.unlist}>
                 <HashLink to="./projects?section=2"><li>Process</li></HashLink>
-                <li><button data-index={2} className="popUp-list">Facilitation</button></li>
+                <li><button data-index={2} onMouseEnter={() => findRightPopUp(setCurrentPopUp(2))}>Facilitation</button></li>
                 <HashLink to="./projects?section=2"><li>Implementation</li></HashLink>
               </ul>
             </div>
@@ -64,15 +59,15 @@ const GradStudies = ({ data }) => {
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Branding</p>
               <ul className={styles.unlist}>
-                <li><button data-index={3} className="popUp-list">Building</button></li>
+                <li><button data-index={3} onMouseEnter={() => findRightPopUp(setCurrentPopUp(3))}>Building</button></li>
                 <HashLink to="./projects?section=3"><li>Strategy</li></HashLink>
               </ul>
             </div>
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Product Development</p>
               <ul className={styles.unlist}>
-                <li><button data-index={4} className="popUp-list">Process</button></li>
-                <li><button data-index={5} className="popUp-list">Optimization</button></li>
+                <li><button data-index={4} onMouseEnter={() => findRightPopUp(setCurrentPopUp(4))}>Process</button></li>
+                <li><button data-index={5} onMouseEnter={() => findRightPopUp(setCurrentPopUp(5))}>Optimization</button></li>
               </ul>
             </div>
           </div>
