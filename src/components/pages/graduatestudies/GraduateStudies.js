@@ -36,7 +36,7 @@ const GradStudies = ({ data }) => {
             managing what already exists.</p>
         </div>
         <div className={styles.catCont}>
-          <h2 className={styles.header2}>Click or hover below for more info!</h2>
+          <h2 className={styles.header2}>Click or Hover Below for More Information About Specific Areas</h2>
           <div className={styles.categories}>
             <div className={styles.categorybox}>
               <p className={styles.catheading}>Prototyping</p>

@@ -31,8 +31,9 @@ const Projects = ({ data }) => {
   }
 
   useEffect(() => {
-
     const clickedSection = searchParams.get('section');
+
+    if (!clickedSection) return;
 
     const findRightSection = (clickedSection) => {
       const sectionToOpen = Array.from(sectionList).find(projectSection => {
@@ -40,6 +41,7 @@ const Projects = ({ data }) => {
         if (index === clickedSection) {
           return index;
         }
+        return null;
       })
       return sectionToOpen
     }

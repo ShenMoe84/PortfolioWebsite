@@ -32,7 +32,7 @@ button {
   border-radius: 20px;
   border-width: 2px;
   color: black;
-  width: 18em;
+  width: 19em;
   padding: 1.4em;
   margin: .8em;
 }
@@ -71,6 +71,7 @@ button {
 
 .header2 {
   text-align: center;
+  text-decoration: underline;
   padding: 40px;
 }
 
@@ -90,7 +91,6 @@ button {
 }
 
 .link {
-  text-decoration: none;
   color: black;
   font-weight: bold;
   font-size: 36px;

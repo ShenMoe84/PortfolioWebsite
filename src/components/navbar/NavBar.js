@@ -17,7 +17,7 @@ const NavBar = () => {
     <nav className={styles.navBar}>
       <div className={styles.headerCont}>
         <NavLink to="/" className={styles.home}>Sheena Monroe</NavLink>
-        <h3 className={styles.tagLine}>Innovation Driven | Solution Focused | Creativity Enthusiast</h3>
+        <h3 className={styles.tagLine}>Innovation Driver | User Focused | Creativity Leader</h3>
       </div>
       <div className={styles.hambMenuCont}>
         {isOpen && (
