@@ -101,6 +101,12 @@ button {
   color: black;
 }
 
+.popUpName {
+  position: fixed;
+  top: .5em;
+  left: .5em;
+}
+
 
 
 .unlist {
