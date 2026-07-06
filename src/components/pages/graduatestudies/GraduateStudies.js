@@ -81,7 +81,7 @@ const GradStudies = ({ data }) => {
                 idx={idx}
                 closePopUp={() => setShowPopUp(false)}
               >
-                <h4 className={styles.popUpName}>{popUp.title}</h4>
+                <h4 className={styles.popUpTitle}>{popUp.title}</h4>
                 <div>
                   <h3 className={styles.popUpText}>{popUp.text}</h3>
                   <h3 className={styles.popUpText}>{popUp.text2}</h3>

@@ -39,7 +39,7 @@ button {
 
 .catheading {
   font-size: 1.5em;
-  padding-bottom: .7em ;
+  padding-bottom: .6em ;
 }
 
 .dTBackground {
@@ -101,13 +101,13 @@ button {
   color: black;
 }
 
-.popUpName {
+.popUpTitle {
+  text-decoration: underline;
   position: fixed;
   top: .5em;
   left: .5em;
+  bottom: .5em;
 }
-
-
 
 .unlist {
   padding-left: 1em;
