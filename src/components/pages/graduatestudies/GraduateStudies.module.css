@@ -42,22 +42,6 @@ button {
   padding-bottom: .6em ;
 }
 
-.dTBackground {
-  background-image: url(../../../images//Backgrounds/DTStickies.jpg);
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: lighten;
-  background-color: rgba(255, 255, 255, 0.6);
-  width: 100vw;
-  height: 100vh;
-}
-
-.designT {
-  color: #515480;
-  font-style: bold;
-  text-align: center;
-}
-
 .dTNonLinear {
   height: 100vh;
   width: 100vw;

@@ -7,23 +7,24 @@ import FairyDoorImages from "../../../../data/FairyDoorImages.js";
 import BookcaseImages from "../../../../data/BookcaseImages.js";
 import WorkTableImages from "../../../../data/WorkTableImages.js";
 import SmallProjectsImages from "../../../../data/SmallProjects.js";
-import DTNonLinear from "../../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
+import DTNonLinear from "../../../../images/DesignThinking/DTProcess.jpeg";
 import DTStickies from "../../../../images/Backgrounds/DTStickies.jpg";
+import PawPrintBg from "../../../../images/DesignChallenges/PawPrintBg.jpg";
 import Oubliette from "../../../../static/Oubliette Presentation.Sheena Monroe.pdf";
 
 const Projects = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchParams] = useSearchParams();
-   
+
   const sectionList = document.getElementsByClassName('project-list');
-  
+
   const handleTriggerClick = (accordionPosition) => {
     setIsOpen(prev => ({
       ...prev,
       [accordionPosition]: !prev[accordionPosition]
     }));
   };
-  
+
   const simulateClick = (e) => {
     e.click();
     window.scrollTo({
@@ -47,7 +48,7 @@ const Projects = ({ data }) => {
       })
       return sectionToOpen;
     }
-    
+
     simulateClick(findRightSection(clickedSection));
 
   }, [searchParams, sectionList]);
@@ -86,11 +87,21 @@ const Projects = ({ data }) => {
         title="Design Thinking - Process & Implementation"
         isOpen={isOpen}>
         <div className={styles.dTCont}>
-          <img className={styles.dTStickies} src={DTStickies} alt="Post-its on Whiteboard"/>
-          <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Process Chart" />
-        </div>
-        <div className={styles.dTImp}>
-          
+          <div className={styles.dTPCont}>
+            <img className={styles.dTStickies} src={DTStickies} alt="Post-its on Whiteboard" />
+            <p className={styles.dTSection1}>5 Stage Process</p>
+            <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Process Chart" />
+          </div>
+          <div className={styles.dTChallenges}>
+            <p className={styles.dTSection2}>Implementation</p>
+            <div className={styles.dCh1}>
+              <img className={styles.pawPrintBg} src={PawPrintBg} alt="Paw Print Background" />
+            </div>
+            <div className={styles.dCh2}>
+
+            </div>
+
+          </div>
         </div>
       </CollapsibleItem>
       <CollapsibleItem
@@ -111,7 +122,7 @@ const Projects = ({ data }) => {
           <p>Content Goes Here</p>
         </div>
       </CollapsibleItem>
-      <div className={styles.lbBackground} alt="Shayla Kirby Unsplash"/>
+      <div className={styles.lbBackground} alt="Shayla Kirby Unsplash" />
     </div>
   )
 }

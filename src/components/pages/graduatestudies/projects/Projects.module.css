@@ -1,45 +1,64 @@
+h1, p {
+  margin: 0;
+}
 
 .dTCont {
-  display: grid;
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .dTNonLinear {
-  width: 80vw;
-  grid-area: 1/1;
+  position: absolute;
+  top: 20%;
+  left: 10%;
   height: 60%;
-  width: 47%;
+  width: 80%;
+}
+
+.dTPCont {
+  position: relative;
+}
+
+.dTSection1 {
+  position: absolute;
+  top: 14%;
+  left: 35%;
+  font-size: 4em;
+}
+
+.dTSection2 {
+  background-color: #e6c68c;
+  font-size: 3em;
+  padding: .5em;
+  text-align: center;
 }
 
 .dTStickies {
+  background-image: url(../../../../images/Backgrounds/DTStickies.jpg);
+  background-size: cover;
+  background-position: center;
+  max-height: 1340px;
+  opacity: 60%;
   width: 100vw;
-  grid-area: 1/1;
-  height: 70em;
-  background-color: rgba(255, 255, 255, 0.6);
+  z-index: -1;
 }
 
 .lbBackground {
   background-image: url(../../../../images/Backgrounds/LightbulbString.jpg);
   background-size: cover;
   background-position: center;
-  background-blend-mode: lighten;
-  background-color: rgba(255, 255, 255, 0.6);
   width: 100vw;
   height: 100vh;
   z-index: -1;
 }
 
 
-h1, p {
-  margin: 0;
-}
-
 .imageSliderTitles {
   font-size: 2em;
   font-weight: bold;
   padding: 1em;
   align-items: center;
+  text-align: center;
 }
 
 .image {
@@ -56,6 +75,15 @@ h1, p {
   background-color:#3597aa;
   color: black;
   width: 100vw;  
+}
+
+.pawPrintBg {
+  background-image: url(../../../../images/DesignChallenges/PawPrintBg.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
 
 .presentationCont {
