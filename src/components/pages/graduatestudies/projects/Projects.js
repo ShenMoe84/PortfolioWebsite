@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import styles from "../projects/Projects.module.css"
+import styles from "../projects/Projects.module.css";
 import ImageCarousel from "../../../imageCarousel/ImageCarousel.js";
+import CollapsibleItem from "../../../collapsible/CollapsibleItem.js";
 import FairyDoorImages from "../../../../data/FairyDoorImages.js";
 import BookcaseImages from "../../../../data/BookcaseImages.js";
 import WorkTableImages from "../../../../data/WorkTableImages.js";
 import SmallProjectsImages from "../../../../data/SmallProjects.js";
 import DTNonLinear from "../../../../images/DesignThinking/td-design-thinking-non-linear-process.jpg";
-import CollapsibleItem from "../../../collapsible/CollapsibleItem.js";
+import DTStickies from "../../../../images/Backgrounds/DTStickies.jpg";
+import Oubliette from "../../../../static/Oubliette Presentation.Sheena Monroe.pdf";
 
 const Projects = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,8 +29,8 @@ const Projects = ({ data }) => {
     window.scrollTo({
       top: true,
       behavior: "smooth"
-    })
-  }
+    });
+  };
 
   useEffect(() => {
     const clickedSection = searchParams.get('section');
@@ -43,10 +45,10 @@ const Projects = ({ data }) => {
         }
         return null;
       })
-      return sectionToOpen
+      return sectionToOpen;
     }
     
-    simulateClick(findRightSection(clickedSection))
+    simulateClick(findRightSection(clickedSection));
 
   }, [searchParams, sectionList]);
 
@@ -56,23 +58,23 @@ const Projects = ({ data }) => {
         id={"section1"}
         dataIndex={1}
         onClick={() => handleTriggerClick(1)}
-        title="Prototyping: Physical Product Development"
+        title="Prototyping - Physical Product Development"
         isOpen={isOpen}
       >
         <div>
-          <div className={styles.fairyDoorCont}>
+          <div className={styles.imageSliderCont}>
             <p className={styles.imageSliderTitles}>Fairy Door Clock</p>
             <ImageCarousel data={FairyDoorImages} />
           </div>
-          <div className={styles.bookcaseCont}>
+          <div className={styles.imageSliderCont2}>
             <p className={styles.imageSliderTitles}>Steampunk Bookcase</p>
             <ImageCarousel data={BookcaseImages} />
           </div>
-          <div className={styles.workTableCont}>
+          <div className={styles.imageSliderCont}>
             <p className={styles.imageSliderTitles}>Convertible Work Table</p>
             <ImageCarousel data={WorkTableImages} />
           </div>
-          <div className={styles.smallProjCont}>
+          <div className={styles.imageSliderCont2}>
             <p className={styles.imageSliderTitles}>Small Projects</p>
             <ImageCarousel data={SmallProjectsImages} />
           </div>
@@ -81,20 +83,23 @@ const Projects = ({ data }) => {
       <CollapsibleItem
         dataIndex={2}
         onClick={() => handleTriggerClick(2)}
-        title="Design Thinking"
+        title="Design Thinking - Process & Implementation"
         isOpen={isOpen}>
-        <div>
-          <p>Content Goes Here</p>
-          <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Chart" />
+        <div className={styles.dTCont}>
+          <img className={styles.dTStickies} src={DTStickies} alt="Post-its on Whiteboard"/>
+          <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Process Chart" />
+        </div>
+        <div className={styles.dTImp}>
+          
         </div>
       </CollapsibleItem>
       <CollapsibleItem
         dataIndex={3}
         onClick={() => handleTriggerClick(3)}
-        title="Branding"
+        title="Brand Building"
         isOpen={isOpen}>
-        <div>
-          <p>Content Goes Here</p>
+        <div className={styles.presentationCont}>
+          <a href={Oubliette} target="_blank" rel="noreferrer">Oubliette Cellars Underground Brewery Concept</a>
         </div>
       </CollapsibleItem>
       <CollapsibleItem

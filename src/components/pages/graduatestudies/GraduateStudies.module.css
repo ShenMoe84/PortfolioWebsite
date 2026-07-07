@@ -103,6 +103,7 @@ button {
 
 .popUpTitle {
   text-decoration: underline;
+  font-weight: normal;
   position: fixed;
   top: .5em;
   left: .5em;

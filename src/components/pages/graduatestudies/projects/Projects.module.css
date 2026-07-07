@@ -1,17 +1,22 @@
-.bookcaseCont {
-  background-color:#e6c68c;
-  color: #515480;
-  width: 100vw;  
+
+.dTCont {
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 
 .dTNonLinear {
-  width: 100vw;
+  width: 80vw;
+  grid-area: 1/1;
+  height: 60%;
+  width: 47%;
 }
 
-.fairyDoorCont {
-  background-color: #3597aa;
-  color: #a8efee;
+.dTStickies {
   width: 100vw;
+  grid-area: 1/1;
+  height: 70em;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .lbBackground {
@@ -34,22 +39,30 @@ h1, p {
   font-size: 2em;
   font-weight: bold;
   padding: 1em;
-  text-align: center;
+  align-items: center;
 }
 
 .image {
   width: 100%;
 }
 
-.smallProjCont {
+.imageSliderCont {
   background-color: #a8efee;
-  color: #515480;
+  color: black;
   width: 100vw;
 }
 
-.workTableCont {
-  background-color: #515480;
-  color: #a8efee;
-  width: 100vw;
+.imageSliderCont2 {
+  background-color:#3597aa;
+  color: black;
+  width: 100vw;  
+}
+
+.presentationCont {
+  font-weight: bold;
+  display: flex;
+  height: 4em;
+  text-align: left;
+  align-items: center;
 }
 
