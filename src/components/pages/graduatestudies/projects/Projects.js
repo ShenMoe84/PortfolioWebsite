@@ -10,6 +10,8 @@ import SmallProjectsImages from "../../../../data/SmallProjects.js";
 import DTNonLinear from "../../../../images/DesignThinking/DTProcess.jpeg";
 import DTStickies from "../../../../images/Backgrounds/DTStickies.jpg";
 import PawPrintBg from "../../../../images/DesignChallenges/PawPrintBg.jpg";
+import DCh1Prototype from "../../../../images/DesignChallenges/DT1Prototype.jpeg";
+import HospFPBg from "../../../../images/DesignChallenges/HospitalFPBg.png";
 import Oubliette from "../../../../static/Oubliette Presentation.Sheena Monroe.pdf";
 
 const Projects = ({ data }) => {
@@ -86,19 +88,20 @@ const Projects = ({ data }) => {
         onClick={() => handleTriggerClick(2)}
         title="Design Thinking - Process & Implementation"
         isOpen={isOpen}>
-        <div className={styles.dTCont}>
+        <div className={styles.dChCont}>
           <div className={styles.dTPCont}>
             <img className={styles.dTStickies} src={DTStickies} alt="Post-its on Whiteboard" />
             <p className={styles.dTSection1}>5 Stage Process</p>
             <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Process Chart" />
           </div>
+          <p className={styles.dTSection2}>Implementation</p>
           <div className={styles.dTChallenges}>
-            <p className={styles.dTSection2}>Implementation</p>
             <div className={styles.dCh1}>
               <img className={styles.pawPrintBg} src={PawPrintBg} alt="Paw Print Background" />
+              <img className={styles.ch1Prototype} src={DCh1Prototype} alt="Scrubs Challenge Prototype"/>
             </div>
             <div className={styles.dCh2}>
-
+              <img className={styles.hospFPBg} src={HospFPBg} alt="Hospital Floor Plan"/>
             </div>
 
           </div>
