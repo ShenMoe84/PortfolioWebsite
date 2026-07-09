@@ -3,23 +3,31 @@ h1, p {
 }
 
 .ch1Prototype {
-  grid-column: 1;
-  grid-row: 1;
-  width: 50em;
-  padding-top: 2.5em;
-  padding-left: 8em;
-  z-index: 2;
+  grid-area: 1/1;
+  width: 44vw;
+  padding-top: 2.3em;
+  padding-left: 5em;
+  padding-right: 5em;
+  margin-left: 3em;
+  z-index: 10;
 }
 
-.dCh1, .dCh2 {
+.ch2Prototype {
+  grid-area: 2/1;
+  margin-left: 15em;
+  height: 50em;
+  z-index: 10;
+}
+
+.dCh {
   display: grid;
-  width: 50%;
 }
 
 .dTChallenges {
   display: grid;
-  grid-template-columns: 2fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+  gap: none;
 }
 
 .dTPCont {
@@ -30,7 +38,7 @@ h1, p {
   position: absolute;
   top: 20%;
   left: 10%;
-  height: 60%;
+  height: 55%;
   width: 80%;
 }
 
@@ -53,9 +61,6 @@ h1, p {
 }
 
 .dTStickies {
-  background-image: url(../../../../images/Backgrounds/DTStickies.jpg);
-  background-size: cover;
-  background-position: center;
   max-height: 1340px;
   opacity: 60%;
   width: 100vw;
@@ -72,15 +77,13 @@ h1, p {
 }
 
 .hospFPBg {
-  background-image: url(../../../../images/DesignChallenges/HospitalFPBg.png);
-  background-size: cover;
-  background-position: right;
-  grid-column: 2;
-  grid-row: 1;
   opacity: 60%;
-  width: 50vw;
-  height: 100vh;
-
+  grid-area: 2/1;
+  padding-top: 8em;
+  padding-left: 2em;
+  width: 48vw;
+  height: 90vh;
+  z-index: -2;
 }
 
 .imageSliderTitles {
@@ -108,13 +111,9 @@ h1, p {
 }
 
 .pawPrintBg {
-  background-image: url(../../../../images/DesignChallenges/PawPrintBg.jpg);
-  background-size: cover;
-  background-position: left;
   grid-area: 1/1;
   width: 50vw;
-  height: 60em;
-  z-index: -1;
+  z-index: -2;
 }
 
 .presentationCont {

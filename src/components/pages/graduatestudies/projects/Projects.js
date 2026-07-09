@@ -12,6 +12,7 @@ import DTStickies from "../../../../images/Backgrounds/DTStickies.jpg";
 import PawPrintBg from "../../../../images/DesignChallenges/PawPrintBg.jpg";
 import DCh1Prototype from "../../../../images/DesignChallenges/DT1Prototype.jpeg";
 import HospFPBg from "../../../../images/DesignChallenges/HospitalFPBg.png";
+import DCh2Prototype from "../../../../images/DesignChallenges/DT2AppView.png"
 import Oubliette from "../../../../static/Oubliette Presentation.Sheena Monroe.pdf";
 
 const Projects = ({ data }) => {
@@ -96,12 +97,13 @@ const Projects = ({ data }) => {
           </div>
           <p className={styles.dTSection2}>Implementation</p>
           <div className={styles.dTChallenges}>
-            <div className={styles.dCh1}>
+            <div className={styles.dCh}>
               <img className={styles.pawPrintBg} src={PawPrintBg} alt="Paw Print Background" />
               <img className={styles.ch1Prototype} src={DCh1Prototype} alt="Scrubs Challenge Prototype"/>
             </div>
-            <div className={styles.dCh2}>
+            <div className={styles.dCh}>
               <img className={styles.hospFPBg} src={HospFPBg} alt="Hospital Floor Plan"/>
+              <img className={styles.ch2Prototype} src={DCh2Prototype} alt="Mock Up Hospital App View"/>
             </div>
 
           </div>
@@ -122,7 +124,7 @@ const Projects = ({ data }) => {
         title="Digital Product Development"
         isOpen={isOpen}>
         <div>
-          <p>Content Goes Here</p>
+          <p className={styles.presentationCont}>Please See Design Thinking Implementation Challenge 2</p>
         </div>
       </CollapsibleItem>
       <div className={styles.lbBackground} alt="Shayla Kirby Unsplash" />
