@@ -6,7 +6,8 @@ import Home from '../pages/home/Home.js';
 import NotFound from '../notfound/NotFound.js';
 import GradStudies from '../pages/graduatestudies/GraduateStudies.js';
 import Projects from '../pages/graduatestudies/projects/Projects.js';
-import popUpData from "../../data/PopUpObjects.js"
+import popUpDataProjects from "../../data/PopUpObjectsProjects.js";
+import popUpDataChallenges from "../../data/PopUpObjectsChallenges.js";
 
 const App = () => (
   <div className={styles.body}>
@@ -26,12 +27,12 @@ const App = () => (
         <Route
           exact
           path='/graduatestudies'
-          element={<GradStudies data={popUpData} />}
+          element={<GradStudies data={popUpDataProjects} />}
         />
         <Route
           exact
           path='graduatestudies/projects/*'
-          element={<Projects/>}
+          element={<Projects data={popUpDataChallenges}/>}
         />
 
         <Route

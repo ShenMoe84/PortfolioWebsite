@@ -42,8 +42,8 @@ const GradStudies = ({ data }) => {
               <p className={styles.catheading}>Prototyping</p>
               <ul className={styles.unlist}>
                 <HashLink to="./projects?section=1"><li>Products</li></HashLink>
-                <li><button data-index={0} onMouseEnter={() => findRightPopUp(setCurrentPopUp(0))}>Services</button></li>
-                <li><button data-index={1} onMouseEnter={() => findRightPopUp(setCurrentPopUp(1))}>Processes</button></li>
+                <li><button onMouseEnter={() => findRightPopUp(setCurrentPopUp(0))}>Services</button></li>
+                <li><button onMouseEnter={() => findRightPopUp(setCurrentPopUp(1))}>Processes</button></li>
               </ul>
             </div>
             <div className={styles.categorybox}>

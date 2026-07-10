@@ -14,10 +14,13 @@ import DCh1Prototype from "../../../../images/DesignChallenges/DT1Prototype.jpeg
 import HospFPBg from "../../../../images/DesignChallenges/HospitalFPBg.png";
 import DCh2Prototype from "../../../../images/DesignChallenges/DT2AppView.png"
 import Oubliette from "../../../../static/Oubliette Presentation.Sheena Monroe.pdf";
+import PopUp from "../../../popup/PopUp.js";
 
 const Projects = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchParams] = useSearchParams();
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [currentPopUp, setCurrentPopUp] = useState(0);
 
   const sectionList = document.getElementsByClassName('project-list');
 
@@ -35,6 +38,12 @@ const Projects = ({ data }) => {
       behavior: "smooth"
     });
   };
+
+  const findRightPopUp = (id) => {
+    const matchingPopUp = Array.from(data).find(popUp => data.id === id);
+    setShowPopUp(true);
+    return matchingPopUp;
+  }
 
   useEffect(() => {
     const clickedSection = searchParams.get('section');
@@ -95,17 +104,38 @@ const Projects = ({ data }) => {
             <p className={styles.dTSection1}>5 Stage Process</p>
             <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Process Chart" />
           </div>
-          <p className={styles.dTSection2}>Implementation</p>
+          <p className={styles.dTSection2}>Implementation - Mouse Over Images for More</p>
           <div className={styles.dTChallenges}>
             <div className={styles.dCh}>
               <img className={styles.pawPrintBg} src={PawPrintBg} alt="Paw Print Background" />
-              <img className={styles.ch1Prototype} src={DCh1Prototype} alt="Scrubs Challenge Prototype"/>
+              <img onMouseEnter={() => findRightPopUp(setCurrentPopUp(0))} className={styles.ch1Prototype} src={DCh1Prototype} alt="Scrubs Challenge Prototype" />
+              <p className={styles.dCh1title}>Design Challenge 1 - Scrubs</p>
             </div>
             <div className={styles.dCh}>
-              <img className={styles.hospFPBg} src={HospFPBg} alt="Hospital Floor Plan"/>
-              <img className={styles.ch2Prototype} src={DCh2Prototype} alt="Mock Up Hospital App View"/>
+              <img className={styles.hospFPBg} src={HospFPBg} alt="Hospital Floor Plan" />
+              <img onMouseEnter={() => findRightPopUp(setCurrentPopUp(1))} className={styles.ch2Prototype} src={DCh2Prototype} alt="Mock Up Hospital App View" />
+              <p className={styles.dCh2title}>Design Challenge 2 - Hospital Wristbands</p>
             </div>
-
+          </div>
+          <div>
+            {showPopUp && Object.values(data).map((popUp, idx) => {
+              return (
+                <PopUp
+                  key={idx}
+                  showPopUp={showPopUp}
+                  currentPopUp={currentPopUp}
+                  idx={idx}
+                  closePopUp={() => setShowPopUp(false)}
+                >
+                  <div>
+                    <h3 className={styles.popUpText}>{popUp.text}</h3>
+                    <br />
+                    <h3 className={styles.popUpText}>{popUp.text2}</h3>
+                  </div>
+                </PopUp>
+              )
+            }
+            )}
           </div>
         </div>
       </CollapsibleItem>
