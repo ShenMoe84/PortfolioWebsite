@@ -58,6 +58,7 @@ const Projects = ({ data }) => {
         }
         return null;
       })
+      setIsOpen(true);
       return sectionToOpen;
     }
 
@@ -68,7 +69,6 @@ const Projects = ({ data }) => {
   return (
     <div>
       <CollapsibleItem
-        id={"section1"}
         dataIndex={1}
         onClick={() => handleTriggerClick(1)}
         title="Prototyping - Physical Product Development"
@@ -108,12 +108,22 @@ const Projects = ({ data }) => {
           <div className={styles.dTChallenges}>
             <div className={styles.dCh}>
               <img className={styles.pawPrintBg} src={PawPrintBg} alt="Paw Print Background" />
-              <img onMouseEnter={() => findRightPopUp(setCurrentPopUp(0))} className={styles.ch1Prototype} src={DCh1Prototype} alt="Scrubs Challenge Prototype" />
+              <img
+                onMouseEnter={() => findRightPopUp(setCurrentPopUp(0))}
+                className={styles.ch1Prototype}
+                src={DCh1Prototype}
+                alt="Scrubs Challenge Prototype"
+              />
               <p className={styles.dCh1title}>Design Challenge 1 - Scrubs</p>
             </div>
             <div className={styles.dCh}>
               <img className={styles.hospFPBg} src={HospFPBg} alt="Hospital Floor Plan" />
-              <img onMouseEnter={() => findRightPopUp(setCurrentPopUp(1))} className={styles.ch2Prototype} src={DCh2Prototype} alt="Mock Up Hospital App View" />
+              <img
+                onMouseEnter={() => findRightPopUp(setCurrentPopUp(1))}
+                className={styles.ch2Prototype}
+                src={DCh2Prototype}
+                alt="Mock Up Hospital App View"
+              />
               <p className={styles.dCh2title}>Design Challenge 2 - Hospital Wristbands</p>
             </div>
           </div>

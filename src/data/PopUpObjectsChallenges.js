@@ -7,7 +7,7 @@ const PopUpObjectsChallenges = [
   {
     id: 1,
     text: "How might we improve the current fuctionality of hospital wristbands to assist both the care team and any associated family members?",
-    text2: "Helix is an app idea that utilizes existing barcode technology to provide real time updates on basic and complex information for those visiting patients in the hospital, with HIPPAA compliance in mind. The care team also gets instant updates on the movements and status of the patient so they always know where to locate them within the hospital. Included in the app is a floor plan and 'you are here' function that allows visitors to navigate the building on their own."
+    text2: "Helix is an app concept that utilizes existing barcode technology to provide real time updates on basic and complex information for those visiting patients in the hospital, with HIPPAA compliance in mind. The care team also gets instant updates on the movements and status of the patient so they always know where to locate them within the hospital. Included in the app is a floor plan and 'you are here' function that allows visitors to navigate the building on their own."
   }]
 
   export default PopUpObjectsChallenges;
