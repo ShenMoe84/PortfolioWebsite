@@ -1,9 +1,10 @@
 import React from "react";
 import ImageSlider from "../../imagesilder/ImageSlider";
+import Form from "../../../components/form/Form";
 import styles from '../home/Home.module.css';
 import Wichita from '../../../images/WichitaSkyline.jpeg';
 import Chicago from '../../../images/ChicagoSkyline.jpeg';
-import ProfilePic from '../../../images/ProfilePic.jpeg'
+import ProfilePic from '../../../images/ProfilePic.jpeg';
 
 const Home = () => {
   const images = [Wichita, Chicago]
@@ -22,6 +23,15 @@ const Home = () => {
           I embrace all things colorful, unique, and interesting. Fortunately, many things fall into those categories, so I'm never truly bored.
           Amongst other things, I am a designer, software developer, innovative thinker, and maker. In conjuction with those, I find myself wanting to solve problems large and small.
           Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.</p>
+      </div>
+      <div>
+        <Form
+          title="Contact">
+          <input type="text" />
+          <input type="email" />
+          <textarea />
+        </Form>
+
       </div>
     </div>
   )

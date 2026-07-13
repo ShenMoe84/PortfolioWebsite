@@ -1,0 +1,12 @@
+.form {
+  background-color: #a8efee;
+  border-radius: 50px;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+  display: block;
+  height: auto;
+  margin: auto;
+  overflow: visible;
+  position: relative;
+  text-align: center;
+  width: 500px;
+}
