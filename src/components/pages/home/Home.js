@@ -7,12 +7,16 @@ import Chicago from '../../../images/ChicagoSkyline.jpeg';
 import ProfilePic from '../../../images/ProfilePic.jpeg';
 import Input from "../../input/Input";
 import {
-  isValidName, isValidEmail, isValidMessage
+  isValidName, isValidEmail, isValidSubj, isValidMessage
 } from "../../../utils/validation";
 import emailjs from '@emailjs/browser';
 
 const Home = () => {
+  const images = [Wichita, Chicago];
+  const profilePic = ProfilePic;
+
   const form = useRef();
+
   const [name, setName] = useState({
     value: '',
     error: false,
@@ -22,33 +26,71 @@ const Home = () => {
     value: '',
     error: false,
     errMsg: 'Please enter a valid email address'
-  })
+  });
+  const [subj, setSubj] = useState({
+    value: '',
+    error: false,
+    errMsg: 'Please enter a subject'
+  });
   const [msg, setMsg] = useState({
     value: '',
     error: false,
     errMsg: 'Please enter a message up to 500 characters long'
-  })
-
-  emailjs.init({
-    publicKey: "vJwH1FIRe2rxBw7A4"
   });
 
-  const sendEmail = (e) => {
+  const inputHandler = (e) => {
+    switch (e.target.name) {
+      case 'Name':
+        setName({ ...name, value: e.target.value, error: false });
+        break;
+      case 'Email':
+        setEmail({ ...email, value: e.target.value, error: false });
+        break;
+      case 'Subject':
+        setSubj({ ...subj, value: e.target.value, error: false });
+        break;
+      case 'Message':
+        setMsg({ ...msg, value: e.target.value, error: false });
+        break;
+      default:
+        break;
+    };
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm("service_08ah4tr", "template_76yispp", form.current, "vJwH1FIRe2rxBw7A4").then(
-      () => {
-        alert("Message sent successfully!");
-        form.current.reset();
-      },
-      (error) => {
-        alert("Failed to send message, please try again.", error.text)
-      }
-    )
-  }
+    let formError = false;
 
-  const images = [Wichita, Chicago]
-  const profilePic = ProfilePic
+    if (!isValidName(name.value)) {
+      formError = true;
+      setName({ ...name, error: true });
+    }
+    if (!isValidEmail(email.value)) {
+      formError = true;
+      setEmail({ ...email, error: true });
+    }
+    if (!isValidSubj(subj.value)) {
+      formError = true;
+      setSubj({ ...subj, error: true });
+    }
+    if (!isValidMessage(msg.value)) {
+      formError = true;
+      setMsg({ ...msg, error: true });
+    }
+
+    if (!formError) {
+      emailjs.sendForm("service_08ah4tr", "template_76yispp", form.current, "vJwH1FIRe2rxBw7A4").then(
+        () => {
+          alert("Message sent successfully!");
+          form.current.reset();
+        },
+        (error) => {
+          alert("Failed to send message, please try again.", error.text)
+        }
+      );
+    };
+  };
 
   return (
     <div className={styles.background}>
@@ -65,13 +107,45 @@ const Home = () => {
           Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.</p>
       </div>
       <div>
-        <Form title="Contact Form" id="contact-form" ref={form} onSubmit={sendEmail}>
-          <Input type="text" name="Name" value="What is your name?" required />
-          <Input type="emaiL" name="Email" value="me@example.com" required />
-          <Input type="text" name="Subject" value="What is this regarding?" required />
+        <Form title="Contact Form" id="contact-form" ref={form} noValidate onSubmit={handleSubmit}>
+          <Input
+            onChange={inputHandler}
+            type="text" name="Name"
+            value="What is your name?"
+            error={name.error}
+            errMsg={name.errMsg}
+            required
+          />
+          <Input
+            onChange={inputHandler}
+            type="emaiL"
+            name="Email"
+            value="me@example.com"
+            error={email.error}
+            errMsg={email.errMsg}
+            required
+          />
+          <Input
+            onChange={inputHandler}
+            type="text"
+            name="Subject" v
+            value="What is this regarding?"
+            error={subj.error}
+            errMsg={subj.errMsg}
+            required
+          />
           <p className={styles.textAreaLabel}>Message</p>
           <br />
-          <textarea className={styles.textArea} name="Message" placeholder="What do you want me to know?" maxLength={500} spellCheck={true} required />
+          <textarea
+            onChange={inputHandler}
+            className={styles.textArea}
+            name="Message"
+            placeholder="What do you want me to know?"
+            maxLength={500}
+            spellCheck={true}
+            error={msg.error}
+            errMsg={msg.errMsg}
+          />
           <input className={styles.submit} type="submit" value="Send"></input>
         </Form>
 
