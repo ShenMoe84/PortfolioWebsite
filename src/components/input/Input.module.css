@@ -4,7 +4,7 @@
   display: inline-block;
   height: 3em;
   outline: none;
-  padding-left: 15px;
+  padding-left: .5em;
   width: 20em;
 }
 
@@ -20,5 +20,5 @@
 
 .errMsg {
   color: red;
-  font-weight: bold;
+  font-size: 1em;
 }

@@ -15,7 +15,7 @@ const Input = ({
       id={name}
       onChange={onChange}
     />
-    {error && <p data-testid="errorDiv" className={styles.errMsg}>{errMsg}</p>}
+    {error && <p className={styles.errMsg}>{errMsg}</p>}
   </div>
 );
 export default Input;
