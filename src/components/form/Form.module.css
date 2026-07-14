@@ -5,8 +5,12 @@
   display: block;
   height: auto;
   margin: auto;
-  overflow: visible;
+  padding: 2em;
   position: relative;
+  text-align: left;
+  width: 35em;
+}
+
+.formTitle {
   text-align: center;
-  width: 500px;
 }

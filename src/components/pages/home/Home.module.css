@@ -10,17 +10,17 @@
   font-family: Baskerville;
   font-weight: bold;
   font-size: 32px;
-  margin-top: 10px;
+  margin: 1.5em;
 }
 
 .aboutParagraph{
   color: white;
   margin-left: 20%;
   margin-right: 20%;
-  padding-bottom: 75px;
-  margin-bottom: 2em;
+  padding: 3em;
+  margin-bottom: 3em;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   font-size: 18px;
 }
 
@@ -33,5 +33,29 @@
   height: 30%;
   width: 30%;
   border-radius: 50%;
+}
 
+.submit {
+  
+}
+
+.textArea {
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 3em;
+  outline: none;
+  padding-left: 15px;
+  width: 35em;
+  height: 20em;
+}
+
+.textAreaLabel {
+  color: black;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  margin-top: 20px;
+  padding-right: 12px;
 }
