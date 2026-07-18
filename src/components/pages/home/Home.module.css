@@ -35,17 +35,13 @@
   border-radius: 50%;
 }
 
-.submit {
-  
-}
-
 .textArea {
   border: none;
   border-radius: 2px;
   display: inline-block;
   height: 3em;
   outline: none;
-  padding-left: 15px;
+  padding-left: .5em;
   width: 35em;
   height: 20em;
 }

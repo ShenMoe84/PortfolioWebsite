@@ -6,6 +6,7 @@ import Wichita from '../../../images/WichitaSkyline.jpeg';
 import Chicago from '../../../images/ChicagoSkyline.jpeg';
 import ProfilePic from '../../../images/ProfilePic.jpeg';
 import Input from "../../input/Input";
+import Button from "../../button/Button";
 import {
   isValidName, isValidEmail, isValidSubj, isValidMessage
 } from "../../../utils/validation";
@@ -15,8 +16,9 @@ const Home = () => {
   const images = [Wichita, Chicago];
   const profilePic = ProfilePic;
 
-  const form = useRef();
+  const formRef = useRef();
 
+  const [error, setError] = useState({});
   const [name, setName] = useState({
     value: '',
     error: false,
@@ -59,29 +61,7 @@ const Home = () => {
     };
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm(
-      process.env.REACT_APP_EMAILJS_SERVICE_ID,
-      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-      form.current,
-      process.env.REACT_APP_EMAILJS_PUBLIC_KEY).then(
-        () => {
-          console.log('Success:')
-          alert("Message sent successfully!");
-          form.current.reset();
-        },
-        (error) => {
-          console.log('Error:', error.text)
-          alert("Failed to send message, please try again.", error.text)
-        }
-      );
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const validateForm = () => {
     let formError = false;
 
     if (!isValidName(name.value)) {
@@ -100,10 +80,29 @@ const Home = () => {
       formError = true;
       setMsg({ ...msg, error: true });
     }
+    console.log(formError)
+    return formError
+  };
 
-    if (!formError) {
-      console.log("made it!")
-      sendEmail();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      emailjs.sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY).then(
+          () => {
+            console.log('Success:')
+            alert("Message sent successfully!");
+            formRef.current.reset();
+          },
+          (error) => {
+            console.log('Error:', error.text)
+            alert("Failed to send message, please try again.", error.text)
+          }
+        );
     };
   };
 
@@ -122,11 +121,12 @@ const Home = () => {
           Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.</p>
       </div>
       <div>
-        <Form title="Contact Form" ref={form} onSubmit={handleSubmit}>
+        <Form title="Contact Form" ref={formRef}>
           <Input
             onChange={inputHandler}
-            type="text" name="Name"
-            value="What is your name?"
+            type="text"
+            name="Name"
+            placeholder="What is your name?"
             error={name.error}
             errMsg={name.errMsg}
             required
@@ -135,7 +135,7 @@ const Home = () => {
             onChange={inputHandler}
             type="emaiL"
             name="Email"
-            value="hello@example.com"
+            placeholder="hello@example.com"
             error={email.error}
             errMsg={email.errMsg}
             required
@@ -144,7 +144,7 @@ const Home = () => {
             onChange={inputHandler}
             type="text"
             name="Subject"
-            value="What is this regarding?"
+            placeholder="What is this regarding?"
             error={subj.error}
             errMsg={subj.errMsg}
             required
@@ -161,9 +161,8 @@ const Home = () => {
             onInvalid={(e) => e.preventDefault()}
             required
           />
-          <input className={styles.submit} type="submit" value="Send" />
+          <Button onChange={validateForm}>Send</Button>
         </Form>
-
       </div>
     </div>
   )

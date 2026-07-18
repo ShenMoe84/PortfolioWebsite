@@ -1,8 +1,7 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import styles from './Form.module.css';
 
-const Form = forwardRef((props, ref) => {
-  const { children, title, onSubmit } = props;
+const Form = ({ children, title, onSubmit, ref }) => {
 
   return (
     <form onSubmit={onSubmit} className={styles.form} ref={ref}>
@@ -10,6 +9,6 @@ const Form = forwardRef((props, ref) => {
       {children}
     </form>
   )
-});
+};
 
 export default Form;
