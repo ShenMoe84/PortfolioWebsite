@@ -6,7 +6,6 @@ import Wichita from '../../../images/WichitaSkyline.jpeg';
 import Chicago from '../../../images/ChicagoSkyline.jpeg';
 import ProfilePic from '../../../images/ProfilePic.jpeg';
 import Input from "../../input/Input";
-import Button from "../../button/Button";
 import {
   isValidName, isValidEmail, isValidSubj, isValidMessage
 } from "../../../utils/validation";
@@ -18,7 +17,6 @@ const Home = () => {
 
   const formRef = useRef();
 
-  const [error, setError] = useState({});
   const [name, setName] = useState({
     value: '',
     error: false,
@@ -39,6 +37,12 @@ const Home = () => {
     error: false,
     errMsg: 'Enter a message up to 500 characters long'
   });
+
+  (function () {
+    emailjs.init({
+      publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
+    });
+  })();
 
   const inputHandler = (e) => {
     e.preventDefault();
@@ -61,7 +65,7 @@ const Home = () => {
     };
   };
 
-  const validateForm = () => {
+  const handleSubmit = () => {
     let formError = false;
 
     if (!isValidName(name.value)) {
@@ -80,19 +84,13 @@ const Home = () => {
       formError = true;
       setMsg({ ...msg, error: true });
     }
-    console.log(formError)
-    return formError
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (validateForm()) {
+    if (!formError) {
       emailjs.sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
         process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         formRef.current,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY).then(
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
+        .then(
           () => {
             console.log('Success:')
             alert("Message sent successfully!");
@@ -121,7 +119,7 @@ const Home = () => {
           Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.</p>
       </div>
       <div>
-        <Form title="Contact Form" ref={formRef}>
+        <Form title="Contact Form" ref={formRef} onSubmit={handleSubmit}>
           <Input
             onChange={inputHandler}
             type="text"
@@ -161,7 +159,7 @@ const Home = () => {
             onInvalid={(e) => e.preventDefault()}
             required
           />
-          <Button onChange={validateForm}>Send</Button>
+          <input type="submit" value="Send" />
         </Form>
       </div>
     </div>
