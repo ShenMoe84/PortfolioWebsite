@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ImageSlider from "../../imagesilder/ImageSlider";
 import Form from "../../../components/form/Form";
 import styles from '../home/Home.module.css';
@@ -7,7 +7,7 @@ import Chicago from '../../../images/ChicagoSkyline.jpeg';
 import ProfilePic from '../../../images/ProfilePic.jpeg';
 import Input from "../../input/Input";
 import {
-  isValidName, isValidEmail, isValidSubj, isValidMessage
+  isValidName, isValidEmail, isValidSubj
 } from "../../../utils/validation";
 import emailjs from '@emailjs/browser';
 
@@ -15,7 +15,8 @@ const Home = () => {
   const images = [Wichita, Chicago];
   const profilePic = ProfilePic;
 
-  const formRef = useRef();
+  const formRef = useRef(null);
+  const textareaRef = useRef();
 
   const [name, setName] = useState({
     value: '',
@@ -65,7 +66,8 @@ const Home = () => {
     };
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault(); 
     let formError = false;
 
     if (!isValidName(name.value)) {
@@ -80,10 +82,7 @@ const Home = () => {
       formError = true;
       setSubj({ ...subj, error: true });
     }
-    if (!isValidMessage(msg.value)) {
-      formError = true;
-      setMsg({ ...msg, error: true });
-    }
+
     if (!formError) {
       emailjs.sendForm(
         process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -104,6 +103,18 @@ const Home = () => {
     };
   };
 
+  useEffect(() => {
+    const textarea = textareaRef.current;
+    const charCount = document.getElementById('charCount');
+    const updateCharCount = () => {
+      charCount.textContent = textarea.value.length;
+    };
+    textarea.addEventListener('input', updateCharCount);
+    return () => {
+      textarea.removeEventListener('input', updateCharCount);
+    };
+  }, []);
+
   return (
     <div className={styles.background}>
       <div>
@@ -119,7 +130,7 @@ const Home = () => {
           Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.</p>
       </div>
       <div>
-        <Form title="Contact Form" ref={formRef} onSubmit={handleSubmit}>
+        <Form noValidate title="Contact Form" ref={formRef} onSubmit={handleSubmit}>
           <Input
             onChange={inputHandler}
             type="text"
@@ -153,12 +164,15 @@ const Home = () => {
             onChange={inputHandler}
             className={styles.textArea}
             name="Message"
-            placeholder="What would you like to tell me?"
+            placeholder="What would you like to tell me? Use up to 500 characters."
             maxLength={500}
             spellCheck={true}
             onInvalid={(e) => e.preventDefault()}
+            id="Message"
+            ref={textareaRef}
             required
           />
+          <p>Character count: <span id="charCount">500</span></p>
           <input type="submit" value="Send" />
         </Form>
       </div>
