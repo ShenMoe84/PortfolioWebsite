@@ -6,7 +6,7 @@ const SoftwareDev = () => {
 
   return (
     <div className={styles.cSBackground}>
-      <p className={styles.cSText}>Example Projects Coming Soon... Stay Tuned!</p>
+      <p className={styles.cSText}>More Example Projects Coming Soon... Stay Tuned!</p>
     </div>
   )
 }

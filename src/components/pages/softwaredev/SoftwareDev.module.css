@@ -11,5 +11,6 @@
 .cSText {
   font-size: 3em;
   font-weight: bold;
-  
+  padding-top: 1em;
+  text-align: center;
 }

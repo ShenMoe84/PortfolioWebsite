@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import styles from "../projects/Projects.module.css";
 import ImageCarousel from "../../../imageCarousel/ImageCarousel.js";
+import PopUp from "../../../popup/PopUp.js";
 import CollapsibleItem from "../../../collapsible/CollapsibleItem.js";
 import FairyDoorImages from "../../../../data/FairyDoorImages.js";
 import BookcaseImages from "../../../../data/BookcaseImages.js";
@@ -14,7 +15,6 @@ import DCh1Prototype from "../../../../images/DesignChallenges/DT1Prototype.jpeg
 import HospFPBg from "../../../../images/DesignChallenges/HospitalFPBg.png";
 import DCh2Prototype from "../../../../images/DesignChallenges/DT2AppView.png"
 import Oubliette from "../../../../static/Oubliette Presentation.Sheena Monroe.pdf";
-import PopUp from "../../../popup/PopUp.js";
 
 const Projects = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -131,6 +131,7 @@ const Projects = ({ data }) => {
             {showPopUp && Object.values(data).map((popUp, idx) => {
               return (
                 <PopUp
+                  className={styles.popUp}
                   key={idx}
                   showPopUp={showPopUp}
                   currentPopUp={currentPopUp}

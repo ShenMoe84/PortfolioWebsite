@@ -4,17 +4,15 @@ h1, p {
 
 .ch1Prototype {
   grid-area: 1/1;
-  width: 44vw;
-  padding-top: 2.3em;
-  padding-left: 5em;
-  padding-right: 5em;
-  margin-left: 3em;
+  width: 80%;
+  height: 75%;
+  margin: auto;
   z-index: 10;
 }
 
 .ch2Prototype {
   grid-area: 2/1;
-  margin-left: 15em;
+  margin: auto;
   height: 50em;
   z-index: 10;
 }
@@ -24,14 +22,13 @@ h1, p {
 }
 
 .dCh1title {
+  grid-area: 1/1;
   font-size: 2em;
   font-weight: bold;
-  grid-area: 1/1;
   background-color: white;
   height: 1.5em;
-  margin-left: 4.3em;
-  margin-top: .6em;
-  padding: .1em;
+  justify-content: center;
+  margin: auto;
   width: 19em;
   border-radius: 8px;
   text-align: center;
@@ -41,28 +38,26 @@ h1, p {
 .dCh2title {
   font-size: 2em;
   font-weight: bold;
-  grid-area: 1/1;
+  grid-area: 2/1;
   background-color: black;
   color: white;
   height: 1.5em;
-  margin-left: 1.4em;
-  margin-top: .6em;
+  margin: auto;
   padding: .1em;
-  width: 25em;
+  width: 20em;
   border-radius: 8px;
   text-align: center;
   z-index: 15;
 }
 
 .dTChallenges {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  gap: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .dTPCont {
   display: grid;
+  gap: 0;
 }
 
 .dTNonLinear {
@@ -104,7 +99,6 @@ h1, p {
   background-image: url(../../../../images/Backgrounds/LightbulbString.jpg);
   background-size: cover;
   background-position: center;
-  width: 100vw;
   height: 100vh;
   z-index: -1;
 }
@@ -112,10 +106,9 @@ h1, p {
 .hospFPBg {
   opacity: 50%;
   grid-area: 2/1;
-  padding-top: 8em;
-  padding-left: 2em;
-  width: 48vw;
-  height: 90vh;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -2;
 }
 
@@ -145,8 +138,33 @@ h1, p {
 
 .pawPrintBg {
   grid-area: 1/1;
-  width: 50vw;
+  width: 100vw;
   z-index: -2;
+}
+
+.popUp{
+  position: absolute;
+  left: 50%;
+  width: 50em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translate(-50%, -250%);
+  padding: 1em;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+  white-space: wrap;
+  z-index: 50;
+}
+
+.popUpText {
+  text-align: left;
+  font-size: 1.5em;
+  padding: 2em;
 }
 
 .presentationCont {

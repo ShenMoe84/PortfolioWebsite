@@ -75,6 +75,7 @@ const GradStudies = ({ data }) => {
           {showPopUp && Object.values(data).map((popUp, idx) => {
             return (
               <PopUp
+                className={styles.popUp}
                 key={idx}
                 showPopUp={showPopUp}
                 currentPopUp={currentPopUp}

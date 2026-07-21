@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
 import ImageSlider from "../../imagesilder/ImageSlider";
 import Form from "../../../components/form/Form";
 import styles from '../home/Home.module.css';
@@ -6,10 +7,10 @@ import Wichita from '../../../images/WichitaSkyline.jpeg';
 import Chicago from '../../../images/ChicagoSkyline.jpeg';
 import ProfilePic from '../../../images/ProfilePic.jpeg';
 import Input from "../../input/Input";
+import Resume from "../../../static/SheenaMonroeResume.pdf";
 import {
   isValidName, isValidEmail, isValidSubj, sendEmail
 } from "../../../utils/validation";
-import emailjs from '@emailjs/browser';
 
 const Home = () => {
   const images = [Wichita, Chicago];
@@ -111,7 +112,10 @@ const Home = () => {
           I embrace all things colorful, unique, and interesting. With broad categories like these, I'm never truly bored. I am a designer, analyst, software developer, innovative thinker, and maker. In conjuction with those, I find myself wanting to solve problems large and small.
           Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.
         </p>
-         <p className={styles.contactParagraph}>In the spirit of collaboration, I welcome your feedback and ideas. Whether it's a question, suggestion, or just a friendly hello, please reach out to me via the contact form below or through my social media links. I look forward to connecting with you!
+        <div className={styles.resumeCont}>
+          <a href={Resume} target="_blank" rel="noreferrer">View My Resume Here</a>
+        </div>
+        <p className={styles.contactParagraph}>In the spirit of collaboration, I welcome your feedback and ideas. Whether it's a question, suggestion, or just a friendly hello, please reach out to me via the contact form below or through my social media links. I look forward to connecting with you!
         </p>
       </div>
       <div>
