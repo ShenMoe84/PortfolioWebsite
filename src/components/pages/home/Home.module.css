@@ -17,8 +17,7 @@
   color: white;
   margin-left: 20%;
   margin-right: 20%;
-  padding: 3em;
-  margin-bottom: 3em;
+  padding: 1.5em;
   font-weight: bold;
   text-align: left;
   font-size: 18px;
@@ -29,10 +28,46 @@
   height: 100%;
 }
 
+.charCount {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.contactParagraph {
+  color: white;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 1.5em;
+  margin-bottom: 3em;
+  font-weight: bold;
+  text-align: left;
+  font-size: 18px;
+}
+
 .profilePic {
   height: 30%;
   width: 30%;
   border-radius: 50%;
+}
+
+.submitButton {
+  background-color: #3597aa;
+  border: none;
+  border-radius: 40px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  height: 3em;
+  margin-top: 1.5em;
+  margin-left: 3.7em;
+  outline: none;
+  padding-left: .5em;
+  text-align: center;
+  width: 20em;
 }
 
 .textArea {

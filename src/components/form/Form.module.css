@@ -11,6 +11,10 @@
   width: 35em;
 }
 
+.formCont {
+  padding: 2em;
+}
+
 .formTitle {
   text-align: center;
 }

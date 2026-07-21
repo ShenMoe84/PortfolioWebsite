@@ -107,11 +107,12 @@ const Home = () => {
       <div className={styles.aboutSectionContainer}>
         <h1 className={styles.aboutSection}>Hello, World!</h1>
         <img className={styles.profilePic} src={profilePic} alt="Sheena Monroe" />
-        <p className={styles.aboutParagraph}>Welcome to my website - coded and designed by me! I'm a Wichita, Kansas native and now
-          Chicagoan. Much like this site, I'm a work in progress on a journey of improving a little every day.
-          I embrace all things colorful, unique, and interesting. Fortunately, many things fall into those categories, so I'm never truly bored.
-          Amongst other things, I am a designer, software developer, innovative thinker, and maker. In conjuction with those, I find myself wanting to solve problems large and small.
-          Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.</p>
+        <p className={styles.aboutParagraph}>Welcome to my website - designed and coded by me! I'm a Wichita, Kansas native and recent Chicagoan. Much like this site, I'm a work in progress on a journey of improving every day.
+          I embrace all things colorful, unique, and interesting. With broad categories like these, I'm never truly bored. I am a designer, analyst, software developer, innovative thinker, and maker. In conjuction with those, I find myself wanting to solve problems large and small.
+          Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.
+        </p>
+         <p className={styles.contactParagraph}>In the spirit of collaboration, I welcome your feedback and ideas. Whether it's a question, suggestion, or just a friendly hello, please reach out to me via the contact form below or through my social media links. I look forward to connecting with you!
+        </p>
       </div>
       <div>
         <Form noValidate title="Contact Form" ref={formRef} action={handleSubmit}>
@@ -156,8 +157,8 @@ const Home = () => {
             ref={textareaRef}
             required
           />
-          <p>Character count: <span id="charCount">0</span></p>
-          <button type="submit">Send Email</button>
+          <p className={styles.charCount}>Character count: <span id="charCount">0</span></p>
+          <button className={styles.submitButton} type="submit">Send Email</button>
         </Form>
       </div>
     </div>
