@@ -7,7 +7,7 @@ import Chicago from '../../../images/ChicagoSkyline.jpeg';
 import ProfilePic from '../../../images/ProfilePic.jpeg';
 import Input from "../../input/Input";
 import {
-  isValidName, isValidEmail, isValidSubj
+  isValidName, isValidEmail, isValidSubj, sendEmail
 } from "../../../utils/validation";
 import emailjs from '@emailjs/browser';
 
@@ -67,12 +67,11 @@ const Home = () => {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
     let formError = false;
 
     if (!isValidName(name.value)) {
       formError = true;
-      setName({ ...name, error: true });
+      setName({ ...name, error: true })
     }
     if (!isValidEmail(email.value)) {
       formError = true;
@@ -84,22 +83,7 @@ const Home = () => {
     }
 
     if (!formError) {
-      emailjs.sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY)
-        .then(
-          () => {
-            console.log('Success:')
-            alert("Message sent successfully!");
-            formRef.current.reset();
-          },
-          (error) => {
-            console.log('Error:', error.text)
-            alert("Failed to send message, please try again.", error.text)
-          }
-        );
+      sendEmail(new FormData(formRef.current));
     };
   };
 
@@ -130,7 +114,7 @@ const Home = () => {
           Here I hope you will find my work interesting, my words thoughtful and my ideas inspirational.</p>
       </div>
       <div>
-        <Form noValidate title="Contact Form" ref={formRef} onSubmit={handleSubmit}>
+        <Form noValidate title="Contact Form" ref={formRef} action={handleSubmit}>
           <Input
             onChange={inputHandler}
             type="text"
@@ -172,8 +156,8 @@ const Home = () => {
             ref={textareaRef}
             required
           />
-          <p>Character count: <span id="charCount">500</span></p>
-          <input type="submit" value="Send" />
+          <p>Character count: <span id="charCount">0</span></p>
+          <button type="submit">Send Email</button>
         </Form>
       </div>
     </div>
