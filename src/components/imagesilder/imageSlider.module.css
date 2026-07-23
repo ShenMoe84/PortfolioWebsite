@@ -11,11 +11,11 @@
 
 .imgSliderImg {
   object-fit: cover;
-  width: 95%;
-  height: 85%;
+  width: 90%;
+  height: 80%;
   border-radius: 20px;
   transition: ease 1000ms;
-  margin-top: 25px;
+  margin-top: 2.5em;
 }
 
 .slideshowDots {

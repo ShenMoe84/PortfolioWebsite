@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import styles from '../app/App.module.css'
+import styles from '../app/App.module.css';
+import LinkedInIcon from '../../images/Socials/linkedin-icon-2.svg';
+import GitHubIcon from '../../images/Socials/github-icon-2.svg';
 import NavBar from '../navbar/NavBar.js';
 import Home from '../pages/home/Home.js';
 import NotFound from '../pages/notfound/NotFound.js';
@@ -57,7 +59,13 @@ const App = () => (
       </Routes>
     </BrowserRouter>
     <footer className={styles.footer}>
-      <p>&#169; Sheena Monroe 2026</p>
+      <div className={styles.copyrightCont}>
+        <p className={styles.copyright}>&#169; Sheena Monroe 2026</p>
+      </div>
+      <div className={styles.socialsCont}>
+        <a href='https://github.com/ShenMoe84'><img className={styles.socialIcon} src={GitHubIcon} alt='GitHub' /></a>
+        <a href='https://www.linkedin.com/in/sheena-monroe/'><img className={styles.socialIcon} src={LinkedInIcon} alt='LinkedIn' /></a>
+      </div>
     </footer>
   </div>
 );
