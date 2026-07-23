@@ -5,7 +5,7 @@ const More = () => {
 
   return (
     <div className={styles.moreCont}>
-      <p className={styles.moreText}>Coming Soon... Stay Tuned!</p>
+      <p className={styles.moreText}>Coming soon... Stay tuned!</p>
     </div>
   )
 }

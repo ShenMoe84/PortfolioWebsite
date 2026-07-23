@@ -145,12 +145,12 @@ h1, p {
 .popUp{
   position: absolute;
   left: 50%;
-  width: 50em;
+  width: 40em;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  transform: translate(-50%, -250%);
+  transform: translate(-50%, -230%);
   padding: 1em;
   background-color: white;
   color: black;

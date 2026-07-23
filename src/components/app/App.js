@@ -63,8 +63,8 @@ const App = () => (
         <p className={styles.copyright}>&#169; Sheena Monroe 2026</p>
       </div>
       <div className={styles.socialsCont}>
-        <a href='https://github.com/ShenMoe84'><img className={styles.socialIcon} src={GitHubIcon} alt='GitHub' /></a>
-        <a href='https://www.linkedin.com/in/sheena-monroe/'><img className={styles.socialIcon} src={LinkedInIcon} alt='LinkedIn' /></a>
+        <a href='https://github.com/ShenMoe84' target="_blank" rel="noreferrer"><img className={styles.socialIcon} src={GitHubIcon} alt='GitHub' /></a>
+        <a href='https://www.linkedin.com/in/sheena-monroe/' target="_blank" rel="noreferrer"><img className={styles.socialIcon} src={LinkedInIcon} alt='LinkedIn' /></a>
       </div>
     </footer>
   </div>
