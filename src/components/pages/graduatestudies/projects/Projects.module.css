@@ -4,34 +4,76 @@ h1, p {
 
 .ch1Prototype {
   grid-area: 1/1;
-  width: 80%;
+  width: 75%;
   height: 75%;
   margin: auto;
   z-index: 10;
 }
 
+@media (max-width: 768px) {
+  .ch1Prototype {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .ch2Prototype {
   grid-area: 2/1;
-  margin: auto;
-  height: 50em;
+  height: auto;
+  transform: translate(250%);
   z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .ch2Prototype {
+    width: 100%;
+    height: 100%;
+    transform: translate(0%);
+  }
 }
 
 .dCh {
   display: grid;
 }
 
+.dCh1InfoCont {
+  grid-area: 1/1;
+  width: 60%;
+  height: auto;
+  margin: auto;
+  z-index: 10;
+}
+
+.dCh2InfoCont {
+  grid-area: 2/1;
+  width: 60%;
+  height: auto;
+  margin: auto;
+  z-index: 10;
+}
+
 .dCh1title {
   grid-area: 1/1;
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   background-color: white;
-  height: 1.5em;
-  justify-content: center;
-  margin: auto;
-  width: 19em;
+  height: auto;
+  width: auto;
   border-radius: 8px;
   text-align: center;
+  z-index: 15;
+}
+
+.dCh1text {
+  grid-area: 1/1;
+  font-size: 1.5em;
+  background-color: white;
+  height: auto;
+  margin-top: 8em;
+  padding: 1em;
+  width: auto;
+  border-radius: 8px;
+  text-align: left;
   z-index: 15;
 }
 
@@ -41,12 +83,25 @@ h1, p {
   grid-area: 2/1;
   background-color: black;
   color: white;
-  height: 1.5em;
+  height: auto;
   margin: auto;
   padding: .1em;
-  width: 20em;
+  width: auto;
   border-radius: 8px;
   text-align: center;
+  z-index: 15;
+}
+
+.dCh2text {
+  font-size: 1.5em;
+  grid-area: 2/1;
+  background-color: black;
+  color: white;
+  height: auto;
+  margin-top: 4em;
+  width: auto;
+  border-radius: 8px;
+  text-align: left;
   z-index: 15;
 }
 
@@ -62,10 +117,10 @@ h1, p {
 
 .dTNonLinear {
   position: absolute;
-  top: 15%;
-  left: 8%;
-  height: 65%;
-  width: 85%;
+  top: 3%;
+  left: 13%;
+  height: 95%;
+  width: 75%;
 }
 
 .dTPCont {
@@ -73,14 +128,6 @@ h1, p {
 }
 
 .dTSection1 {
-  position: absolute;
-  top: 9%;
-  left: 38%;
-  font-size: 4em;
-  font-weight: bold;
-}
-
-.dTSection2 {
   background-color: #e6c68c;
   font-size: 3em;
   font-weight: bold;
@@ -89,7 +136,7 @@ h1, p {
 }
 
 .dTStickies {
-  max-height: 1340px;
+  height: auto;
   opacity: 60%;
   width: 100vw;
   z-index: -1;
@@ -106,8 +153,8 @@ h1, p {
 .hospFPBg {
   opacity: 50%;
   grid-area: 2/1;
-  padding: 0;
-  width: 100vw;
+  padding-top: 1em;
+  width: 80vw;
   height: 100vh;
   z-index: -2;
 }
@@ -138,33 +185,9 @@ h1, p {
 
 .pawPrintBg {
   grid-area: 1/1;
+  height: auto;
   width: 100vw;
   z-index: -2;
-}
-
-.popUp{
-  position: absolute;
-  left: 50%;
-  width: 40em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transform: translate(-50%, -230%);
-  padding: 1em;
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-  white-space: wrap;
-  z-index: 50;
-}
-
-.popUpText {
-  text-align: left;
-  font-size: 1.5em;
-  padding: 2em;
 }
 
 .presentationCont {

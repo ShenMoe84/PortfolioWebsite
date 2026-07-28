@@ -15,9 +15,10 @@
   font-weight: bold;
   margin-bottom: .5em;
   margin-top: 1.5em;
+  text-align: left;
 }
 
 .errMsg {
   color: red;
-  font-size: 1em;
+  font-size: .9em;
 }

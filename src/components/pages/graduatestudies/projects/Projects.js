@@ -8,7 +8,7 @@ import FairyDoorImages from "../../../../data/FairyDoorImages.js";
 import BookcaseImages from "../../../../data/BookcaseImages.js";
 import WorkTableImages from "../../../../data/WorkTableImages.js";
 import SmallProjectsImages from "../../../../data/SmallProjects.js";
-import DTNonLinear from "../../../../images/DesignThinking/DTProcess.jpeg";
+import DTNonLinear from "../../../../images/DesignThinking/DTProcessOriginal.jpg";
 import DTStickies from "../../../../images/Backgrounds/DTStickies.jpg";
 import PawPrintBg from "../../../../images/DesignChallenges/PawPrintBg.jpg";
 import DCh1Prototype from "../../../../images/DesignChallenges/DT1Prototype.jpeg";
@@ -19,8 +19,6 @@ import Oubliette from "../../../../static/Oubliette Presentation.Sheena Monroe.p
 const Projects = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchParams] = useSearchParams();
-  const [showPopUp, setShowPopUp] = useState(false);
-  const [currentPopUp, setCurrentPopUp] = useState(0);
 
   const sectionList = document.getElementsByClassName('project-list');
 
@@ -38,12 +36,6 @@ const Projects = ({ data }) => {
       behavior: "smooth"
     });
   };
-
-  const findRightPopUp = (id) => {
-    const matchingPopUp = Array.from(data).find(popUp => data.id === id);
-    setShowPopUp(true);
-    return matchingPopUp;
-  }
 
   useEffect(() => {
     const clickedSection = searchParams.get('section');
@@ -101,52 +93,40 @@ const Projects = ({ data }) => {
         <div className={styles.dChCont}>
           <div className={styles.dTPCont}>
             <img className={styles.dTStickies} src={DTStickies} alt="Post-its on Whiteboard" />
-            <p className={styles.dTSection1}>5 Stage Process</p>
             <img className={styles.dTNonLinear} src={DTNonLinear} alt="Design Thinking Process Chart" />
           </div>
-          <p className={styles.dTSection2}>Implementation - Mouse Over Images for More</p>
+          <p className={styles.dTSection1}>Implementation - Design Challenges</p>
           <div className={styles.dTChallenges}>
             <div className={styles.dCh}>
               <img className={styles.pawPrintBg} src={PawPrintBg} alt="Paw Print Background" />
               <img
-                onMouseEnter={() => findRightPopUp(setCurrentPopUp(0))}
                 className={styles.ch1Prototype}
                 src={DCh1Prototype}
                 alt="Scrubs Challenge Prototype"
               />
-              <p className={styles.dCh1title}>Design Challenge 1 - Scrubs</p>
+              <div className={styles.dCh1InfoCont}>
+                <p className={styles.dCh1title}>How might we reimagine scrubs for modern wearers with comfort and functionality in mind?</p>
+                <p className={styles.dCh1text}>I chose to focus exclusively on users in the pet care industry, specifically groomers. The prototype you see has a removeable set of pockets similar
+                  to an apron with a waterproof space for electronics, and elements to provide temperature regulation, such as an integrated space for a hot/cold pack and grommets for breathability.
+                  I also created a collapsible hat with a mesh facial screen to keep hair out of the face when drying a double-coated pet.
+                </p>
+              </div>
             </div>
             <div className={styles.dCh}>
               <img className={styles.hospFPBg} src={HospFPBg} alt="Hospital Floor Plan" />
               <img
-                onMouseEnter={() => findRightPopUp(setCurrentPopUp(1))}
                 className={styles.ch2Prototype}
                 src={DCh2Prototype}
                 alt="Mock Up Hospital App View"
               />
-              <p className={styles.dCh2title}>Design Challenge 2 - Hospital Wristbands</p>
+              <div className={styles.dCh2InfoCont}>
+                <p className={styles.dCh1title}>How might we improve the current fuctionality of hospital wristbands to assist both the care team and any associated family members?</p>
+                <p className={styles.dCh1text}>Helix is an app concept that utilizes existing barcode technology to provide real time updates on basic and complex information for those visiting
+                  patients in the hospital, with HIPPAA compliance in mind. The care team also gets instant updates on the movements and status of the patient so they always know where to locate them
+                  within the hospital. Included in the app is a floor plan and 'you are here' function that allows visitors to navigate the building on their own.
+                </p>
+              </div>
             </div>
-          </div>
-          <div>
-            {showPopUp && Object.values(data).map((popUp, idx) => {
-              return (
-                <PopUp
-                  className={styles.popUp}
-                  key={idx}
-                  showPopUp={showPopUp}
-                  currentPopUp={currentPopUp}
-                  idx={idx}
-                  closePopUp={() => setShowPopUp(false)}
-                >
-                  <div>
-                    <h3 className={styles.popUpText}>{popUp.text}</h3>
-                    <br />
-                    <h3 className={styles.popUpText}>{popUp.text2}</h3>
-                  </div>
-                </PopUp>
-              )
-            }
-            )}
           </div>
         </div>
       </CollapsibleItem>
@@ -165,7 +145,7 @@ const Projects = ({ data }) => {
         title="Digital Product Development"
         isOpen={isOpen}>
         <div>
-          <p className={styles.presentationCont}>Please See Design Thinking Implementation Challenge 2</p>
+          <p className={styles.presentationCont}>Please See Design Thinking Implementation for Hospital Wristbands</p>
         </div>
       </CollapsibleItem>
       <div className={styles.lbBackground} alt="Shayla Kirby Unsplash" />
