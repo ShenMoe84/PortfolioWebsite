@@ -30,8 +30,19 @@
   left: 5rem;
 }
 
+
 .arrowRight {
   right: 5rem;
+}
+
+@media (max-width: 768px) {
+  .arrowLeft {
+    left: .5rem;
+  }
+  
+  .arrowRight {
+    right: .5rem;
+  }
 }
 
 .arrowLeft:hover, .arrowRight:hover {

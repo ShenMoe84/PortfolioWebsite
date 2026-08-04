@@ -2,7 +2,7 @@
   display: block;
   height: auto;
   margin: auto;
-  padding: 2em;
+  padding: 1em;
   position: relative;
   text-align: center;
   width: 85%;
@@ -10,7 +10,7 @@
 
 .formCont {
   background-color: #a8efee;
-  padding: 4em;
+  padding: 2em;
 }
 
 .formTitle {
